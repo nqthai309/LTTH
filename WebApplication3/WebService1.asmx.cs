@@ -83,14 +83,33 @@ namespace WebApplication3
         [WebMethod]
         public void EditHotel_BE(int id_old, string json)
         {
+            var row_bookings = context.hotel_booking.Where(x => x.hotel_id == id_old).ToList();
+            var newRows = row_bookings;
+            foreach(var item in row_bookings)
+            {
+                context.hotel_booking.Remove(item);
+            }
             context.hotels.Remove(context.hotels.Find(id_old));
-            context.hotels.Add(JsonConvert.DeserializeObject<hotel>(json));
+            var hotel = JsonConvert.DeserializeObject<hotel>(json);
+            context.hotels.Add(hotel);
+            context.SaveChanges();
+            foreach (var item in newRows)
+            {
+                item.hotel_id = hotel.id;
+                context.hotel_booking.Add(item);
+            }
             context.SaveChanges();
         }
 
         [WebMethod]
         public void DeleteHotel_BE(int id)
         {
+            var listBooking = context.hotel_booking.Where(x => x.hotel_id == id).ToList();
+            foreach(var item in listBooking)
+            {
+                context.hotel_booking.Remove(item);
+            }
+            context.SaveChanges();
             context.hotels.Remove(context.hotels.Find(id));
             context.SaveChanges();
         }
@@ -117,14 +136,33 @@ namespace WebApplication3
         [WebMethod]
         public void EditHomestay_BE(int id_old, string json)
         {
+            var row_bookings = context.homestay_booking.Where(x => x.homestay_id == id_old).ToList();
+            var newRows = row_bookings;
+            foreach (var item in row_bookings)
+            {
+                context.homestay_booking.Remove(item);
+            }
             context.homestays.Remove(context.homestays.Find(id_old));
-            context.homestays.Add(JsonConvert.DeserializeObject<homestay>(json));
+            var homeStay = JsonConvert.DeserializeObject<homestay>(json);
+            context.homestays.Add(homeStay);
+            context.SaveChanges();
+            foreach (var item in newRows)
+            {
+                item.homestay_id = homeStay.id;
+                context.homestay_booking.Add(item);
+            }
             context.SaveChanges();
         }
 
         [WebMethod]
         public void DeleteHomestay_BE(int id)
         {
+            var listBooking = context.homestay_booking.Where(x => x.homestay_id == id).ToList();
+            foreach (var item in listBooking)
+            {
+                context.homestay_booking.Remove(item);
+            }
+            context.SaveChanges();
             context.homestays.Remove(context.homestays.Find(id));
             context.SaveChanges();
         }

@@ -104,7 +104,7 @@ namespace CNW_N8_MVC.Areas.Backend.Controllers
             client.EditHotel_BE(id_Old, JsonConvert.SerializeObject(hotel));
             //context.hotels.Remove(context.hotels.Find(id_Old));
             //context.hotels.Add(hotel);
-            context.SaveChanges();
+            //context.SaveChanges();
 
 
             return RedirectToAction("List", "BackendHotel", new { area = "Backend" });
