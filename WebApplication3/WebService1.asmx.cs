@@ -204,6 +204,38 @@ namespace WebApplication3
         //------------------------THAI----------------------------------
         //------------------------TUNG----------------------------------
         //user/home
+        [WebMethod]
+        public string FrontEndGetListHomestay()
+        {
+            var list = context.homestays.Where(x => x.id != 0).ToList();
+            string json = JsonConvert.SerializeObject(list, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+
+        [WebMethod]
+        public string FrontEndGetListHotel()
+        {
+            var list = context.hotels.Where(x => x.id != 0).ToList();
+            string json = JsonConvert.SerializeObject(list, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+
+        [WebMethod]
+        public string FrontEndGetListLocation()
+        {
+            var list = context.locations.Where(x => x.id != 0).ToList();
+            string json = JsonConvert.SerializeObject(list, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
         //------------------------TUNG----------------------------------
         //------------------------THANG----------------------------------
         //hotel
