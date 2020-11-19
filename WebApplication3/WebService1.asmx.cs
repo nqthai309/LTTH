@@ -20,7 +20,7 @@ namespace WebApplication3
     public class WebService1 : System.Web.Services.WebService
     {
         Model1 context = new Model1();
-
+        //------------------------THAI----------------------------------
         [WebMethod]
         public string DangNhapAppWinForm(string username, string password)
         {
@@ -201,5 +201,15 @@ namespace WebApplication3
             }
             return "";
         }
+        //------------------------THAI----------------------------------
+        //------------------------TUNG----------------------------------
+        //user/home
+        //------------------------TUNG----------------------------------
+        //------------------------THANG----------------------------------
+        //hotel
+        //------------------------THANG----------------------------------
+        //------------------------HIEU----------------------------------
+        //homestay
+        //------------------------HIEU----------------------------------
     }
 }
