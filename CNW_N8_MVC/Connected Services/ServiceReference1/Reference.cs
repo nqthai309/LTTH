@@ -15,12 +15,12 @@ namespace CNW_N8_MVC.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.WebService1Soap")]
     public interface WebService1Soap {
         
-        // CODEGEN: Generating message contract since element name HelloWorldResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        CNW_N8_MVC.ServiceReference1.HelloWorldResponse HelloWorld(CNW_N8_MVC.ServiceReference1.HelloWorldRequest request);
+        // CODEGEN: Generating message contract since element name username from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DangNhapAppWinForm", ReplyAction="*")]
+        CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormResponse DangNhapAppWinForm(CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.HelloWorldResponse> HelloWorldAsync(CNW_N8_MVC.ServiceReference1.HelloWorldRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DangNhapAppWinForm", ReplyAction="*")]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormResponse> DangNhapAppWinFormAsync(CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormRequest request);
         
         // CODEGEN: Generating message contract since element name GetListUser_BEResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListUser_BE", ReplyAction="*")]
@@ -109,48 +109,112 @@ namespace CNW_N8_MVC.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListBooking_BE", ReplyAction="*")]
         System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.GetListBooking_BEResponse> GetListBooking_BEAsync(CNW_N8_MVC.ServiceReference1.GetListBooking_BERequest request);
+        
+        // CODEGEN: Generating message contract since element name FrontEndGetListHomestayResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndGetListHomestay", ReplyAction="*")]
+        CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayResponse FrontEndGetListHomestay(CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndGetListHomestay", ReplyAction="*")]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayResponse> FrontEndGetListHomestayAsync(CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayRequest request);
+        
+        // CODEGEN: Generating message contract since element name FrontEndGetListHotelResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndGetListHotel", ReplyAction="*")]
+        CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelResponse FrontEndGetListHotel(CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndGetListHotel", ReplyAction="*")]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelResponse> FrontEndGetListHotelAsync(CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelRequest request);
+        
+        // CODEGEN: Generating message contract since element name FrontEndFindHomestayByIdResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndFindHomestayById", ReplyAction="*")]
+        CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdResponse FrontEndFindHomestayById(CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndFindHomestayById", ReplyAction="*")]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdResponse> FrontEndFindHomestayByIdAsync(CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdRequest request);
+        
+        // CODEGEN: Generating message contract since element name FrontEndFindHotelByIdResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndFindHotelById", ReplyAction="*")]
+        CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdResponse FrontEndFindHotelById(CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndFindHotelById", ReplyAction="*")]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdResponse> FrontEndFindHotelByIdAsync(CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdRequest request);
+        
+        // CODEGEN: Generating message contract since element name FrontEndGetListLocationResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndGetListLocation", ReplyAction="*")]
+        CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationResponse FrontEndGetListLocation(CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndGetListLocation", ReplyAction="*")]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationResponse> FrontEndGetListLocationAsync(CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationRequest request);
+        
+        // CODEGEN: Generating message contract since element name username from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndLogin", ReplyAction="*")]
+        CNW_N8_MVC.ServiceReference1.FrontEndLoginResponse FrontEndLogin(CNW_N8_MVC.ServiceReference1.FrontEndLoginRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndLogin", ReplyAction="*")]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndLoginResponse> FrontEndLoginAsync(CNW_N8_MVC.ServiceReference1.FrontEndLoginRequest request);
+        
+        // CODEGEN: Generating message contract since element name FrontEndFindUserByIdResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndFindUserById", ReplyAction="*")]
+        CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdResponse FrontEndFindUserById(CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndFindUserById", ReplyAction="*")]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdResponse> FrontEndFindUserByIdAsync(CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdRequest request);
+        
+        // CODEGEN: Generating message contract since element name username from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndFindUserByUsername", ReplyAction="*")]
+        CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameResponse FrontEndFindUserByUsername(CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndFindUserByUsername", ReplyAction="*")]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameResponse> FrontEndFindUserByUsernameAsync(CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameRequest request);
+        
+        // CODEGEN: Generating message contract since element name json from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndRegister", ReplyAction="*")]
+        CNW_N8_MVC.ServiceReference1.FrontEndRegisterResponse FrontEndRegister(CNW_N8_MVC.ServiceReference1.FrontEndRegisterRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndRegister", ReplyAction="*")]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndRegisterResponse> FrontEndRegisterAsync(CNW_N8_MVC.ServiceReference1.FrontEndRegisterRequest request);
+        
+        // CODEGEN: Generating message contract since element name json from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndUpdateUserInfo", ReplyAction="*")]
+        CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoResponse FrontEndUpdateUserInfo(CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndUpdateUserInfo", ReplyAction="*")]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoResponse> FrontEndUpdateUserInfoAsync(CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoRequest request);
+        
+        // CODEGEN: Generating message contract since element name password from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndChangePassword", ReplyAction="*")]
+        CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordResponse FrontEndChangePassword(CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndChangePassword", ReplyAction="*")]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordResponse> FrontEndChangePasswordAsync(CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordRequest request);
+        
+        // CODEGEN: Generating message contract since element name json from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndAddHotelBooking", ReplyAction="*")]
+        CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingResponse FrontEndAddHotelBooking(CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndAddHotelBooking", ReplyAction="*")]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingResponse> FrontEndAddHotelBookingAsync(CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingRequest request);
+        
+        // CODEGEN: Generating message contract since element name json from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndAddHomestayBooking", ReplyAction="*")]
+        CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingResponse FrontEndAddHomestayBooking(CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FrontEndAddHomestayBooking", ReplyAction="*")]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingResponse> FrontEndAddHomestayBookingAsync(CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldRequest {
+    public partial class DangNhapAppWinFormRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorld", Namespace="http://tempuri.org/", Order=0)]
-        public CNW_N8_MVC.ServiceReference1.HelloWorldRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DangNhapAppWinForm", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormRequestBody Body;
         
-        public HelloWorldRequest() {
+        public DangNhapAppWinFormRequest() {
         }
         
-        public HelloWorldRequest(CNW_N8_MVC.ServiceReference1.HelloWorldRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class HelloWorldRequestBody {
-        
-        public HelloWorldRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorldResponse", Namespace="http://tempuri.org/", Order=0)]
-        public CNW_N8_MVC.ServiceReference1.HelloWorldResponseBody Body;
-        
-        public HelloWorldResponse() {
-        }
-        
-        public HelloWorldResponse(CNW_N8_MVC.ServiceReference1.HelloWorldResponseBody Body) {
+        public DangNhapAppWinFormRequest(CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -159,16 +223,54 @@ namespace CNW_N8_MVC.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class HelloWorldResponseBody {
+    public partial class DangNhapAppWinFormRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string HelloWorldResult;
+        public string username;
         
-        public HelloWorldResponseBody() {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string password;
+        
+        public DangNhapAppWinFormRequestBody() {
         }
         
-        public HelloWorldResponseBody(string HelloWorldResult) {
-            this.HelloWorldResult = HelloWorldResult;
+        public DangNhapAppWinFormRequestBody(string username, string password) {
+            this.username = username;
+            this.password = password;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DangNhapAppWinFormResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DangNhapAppWinFormResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormResponseBody Body;
+        
+        public DangNhapAppWinFormResponse() {
+        }
+        
+        public DangNhapAppWinFormResponse(CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DangNhapAppWinFormResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string DangNhapAppWinFormResult;
+        
+        public DangNhapAppWinFormResponseBody() {
+        }
+        
+        public DangNhapAppWinFormResponseBody(string DangNhapAppWinFormResult) {
+            this.DangNhapAppWinFormResult = DangNhapAppWinFormResult;
         }
     }
     
@@ -801,6 +903,846 @@ namespace CNW_N8_MVC.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndGetListHomestayRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndGetListHomestay", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayRequestBody Body;
+        
+        public FrontEndGetListHomestayRequest() {
+        }
+        
+        public FrontEndGetListHomestayRequest(CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class FrontEndGetListHomestayRequestBody {
+        
+        public FrontEndGetListHomestayRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndGetListHomestayResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndGetListHomestayResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayResponseBody Body;
+        
+        public FrontEndGetListHomestayResponse() {
+        }
+        
+        public FrontEndGetListHomestayResponse(CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndGetListHomestayResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string FrontEndGetListHomestayResult;
+        
+        public FrontEndGetListHomestayResponseBody() {
+        }
+        
+        public FrontEndGetListHomestayResponseBody(string FrontEndGetListHomestayResult) {
+            this.FrontEndGetListHomestayResult = FrontEndGetListHomestayResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndGetListHotelRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndGetListHotel", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelRequestBody Body;
+        
+        public FrontEndGetListHotelRequest() {
+        }
+        
+        public FrontEndGetListHotelRequest(CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class FrontEndGetListHotelRequestBody {
+        
+        public FrontEndGetListHotelRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndGetListHotelResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndGetListHotelResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelResponseBody Body;
+        
+        public FrontEndGetListHotelResponse() {
+        }
+        
+        public FrontEndGetListHotelResponse(CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndGetListHotelResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string FrontEndGetListHotelResult;
+        
+        public FrontEndGetListHotelResponseBody() {
+        }
+        
+        public FrontEndGetListHotelResponseBody(string FrontEndGetListHotelResult) {
+            this.FrontEndGetListHotelResult = FrontEndGetListHotelResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndFindHomestayByIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndFindHomestayById", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdRequestBody Body;
+        
+        public FrontEndFindHomestayByIdRequest() {
+        }
+        
+        public FrontEndFindHomestayByIdRequest(CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndFindHomestayByIdRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public FrontEndFindHomestayByIdRequestBody() {
+        }
+        
+        public FrontEndFindHomestayByIdRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndFindHomestayByIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndFindHomestayByIdResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdResponseBody Body;
+        
+        public FrontEndFindHomestayByIdResponse() {
+        }
+        
+        public FrontEndFindHomestayByIdResponse(CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndFindHomestayByIdResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string FrontEndFindHomestayByIdResult;
+        
+        public FrontEndFindHomestayByIdResponseBody() {
+        }
+        
+        public FrontEndFindHomestayByIdResponseBody(string FrontEndFindHomestayByIdResult) {
+            this.FrontEndFindHomestayByIdResult = FrontEndFindHomestayByIdResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndFindHotelByIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndFindHotelById", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdRequestBody Body;
+        
+        public FrontEndFindHotelByIdRequest() {
+        }
+        
+        public FrontEndFindHotelByIdRequest(CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndFindHotelByIdRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public FrontEndFindHotelByIdRequestBody() {
+        }
+        
+        public FrontEndFindHotelByIdRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndFindHotelByIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndFindHotelByIdResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdResponseBody Body;
+        
+        public FrontEndFindHotelByIdResponse() {
+        }
+        
+        public FrontEndFindHotelByIdResponse(CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndFindHotelByIdResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string FrontEndFindHotelByIdResult;
+        
+        public FrontEndFindHotelByIdResponseBody() {
+        }
+        
+        public FrontEndFindHotelByIdResponseBody(string FrontEndFindHotelByIdResult) {
+            this.FrontEndFindHotelByIdResult = FrontEndFindHotelByIdResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndGetListLocationRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndGetListLocation", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationRequestBody Body;
+        
+        public FrontEndGetListLocationRequest() {
+        }
+        
+        public FrontEndGetListLocationRequest(CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class FrontEndGetListLocationRequestBody {
+        
+        public FrontEndGetListLocationRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndGetListLocationResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndGetListLocationResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationResponseBody Body;
+        
+        public FrontEndGetListLocationResponse() {
+        }
+        
+        public FrontEndGetListLocationResponse(CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndGetListLocationResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string FrontEndGetListLocationResult;
+        
+        public FrontEndGetListLocationResponseBody() {
+        }
+        
+        public FrontEndGetListLocationResponseBody(string FrontEndGetListLocationResult) {
+            this.FrontEndGetListLocationResult = FrontEndGetListLocationResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndLoginRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndLogin", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndLoginRequestBody Body;
+        
+        public FrontEndLoginRequest() {
+        }
+        
+        public FrontEndLoginRequest(CNW_N8_MVC.ServiceReference1.FrontEndLoginRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndLoginRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string username;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string password;
+        
+        public FrontEndLoginRequestBody() {
+        }
+        
+        public FrontEndLoginRequestBody(string username, string password) {
+            this.username = username;
+            this.password = password;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndLoginResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndLoginResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndLoginResponseBody Body;
+        
+        public FrontEndLoginResponse() {
+        }
+        
+        public FrontEndLoginResponse(CNW_N8_MVC.ServiceReference1.FrontEndLoginResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndLoginResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string FrontEndLoginResult;
+        
+        public FrontEndLoginResponseBody() {
+        }
+        
+        public FrontEndLoginResponseBody(string FrontEndLoginResult) {
+            this.FrontEndLoginResult = FrontEndLoginResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndFindUserByIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndFindUserById", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdRequestBody Body;
+        
+        public FrontEndFindUserByIdRequest() {
+        }
+        
+        public FrontEndFindUserByIdRequest(CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndFindUserByIdRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public FrontEndFindUserByIdRequestBody() {
+        }
+        
+        public FrontEndFindUserByIdRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndFindUserByIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndFindUserByIdResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdResponseBody Body;
+        
+        public FrontEndFindUserByIdResponse() {
+        }
+        
+        public FrontEndFindUserByIdResponse(CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndFindUserByIdResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string FrontEndFindUserByIdResult;
+        
+        public FrontEndFindUserByIdResponseBody() {
+        }
+        
+        public FrontEndFindUserByIdResponseBody(string FrontEndFindUserByIdResult) {
+            this.FrontEndFindUserByIdResult = FrontEndFindUserByIdResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndFindUserByUsernameRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndFindUserByUsername", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameRequestBody Body;
+        
+        public FrontEndFindUserByUsernameRequest() {
+        }
+        
+        public FrontEndFindUserByUsernameRequest(CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndFindUserByUsernameRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string username;
+        
+        public FrontEndFindUserByUsernameRequestBody() {
+        }
+        
+        public FrontEndFindUserByUsernameRequestBody(string username) {
+            this.username = username;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndFindUserByUsernameResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndFindUserByUsernameResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameResponseBody Body;
+        
+        public FrontEndFindUserByUsernameResponse() {
+        }
+        
+        public FrontEndFindUserByUsernameResponse(CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndFindUserByUsernameResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string FrontEndFindUserByUsernameResult;
+        
+        public FrontEndFindUserByUsernameResponseBody() {
+        }
+        
+        public FrontEndFindUserByUsernameResponseBody(string FrontEndFindUserByUsernameResult) {
+            this.FrontEndFindUserByUsernameResult = FrontEndFindUserByUsernameResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndRegisterRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndRegister", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndRegisterRequestBody Body;
+        
+        public FrontEndRegisterRequest() {
+        }
+        
+        public FrontEndRegisterRequest(CNW_N8_MVC.ServiceReference1.FrontEndRegisterRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndRegisterRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string json;
+        
+        public FrontEndRegisterRequestBody() {
+        }
+        
+        public FrontEndRegisterRequestBody(string json) {
+            this.json = json;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndRegisterResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndRegisterResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndRegisterResponseBody Body;
+        
+        public FrontEndRegisterResponse() {
+        }
+        
+        public FrontEndRegisterResponse(CNW_N8_MVC.ServiceReference1.FrontEndRegisterResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class FrontEndRegisterResponseBody {
+        
+        public FrontEndRegisterResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndUpdateUserInfoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndUpdateUserInfo", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoRequestBody Body;
+        
+        public FrontEndUpdateUserInfoRequest() {
+        }
+        
+        public FrontEndUpdateUserInfoRequest(CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndUpdateUserInfoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string json;
+        
+        public FrontEndUpdateUserInfoRequestBody() {
+        }
+        
+        public FrontEndUpdateUserInfoRequestBody(int id, string json) {
+            this.id = id;
+            this.json = json;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndUpdateUserInfoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndUpdateUserInfoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoResponseBody Body;
+        
+        public FrontEndUpdateUserInfoResponse() {
+        }
+        
+        public FrontEndUpdateUserInfoResponse(CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class FrontEndUpdateUserInfoResponseBody {
+        
+        public FrontEndUpdateUserInfoResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndChangePasswordRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndChangePassword", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordRequestBody Body;
+        
+        public FrontEndChangePasswordRequest() {
+        }
+        
+        public FrontEndChangePasswordRequest(CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndChangePasswordRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string password;
+        
+        public FrontEndChangePasswordRequestBody() {
+        }
+        
+        public FrontEndChangePasswordRequestBody(int id, string password) {
+            this.id = id;
+            this.password = password;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndChangePasswordResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndChangePasswordResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordResponseBody Body;
+        
+        public FrontEndChangePasswordResponse() {
+        }
+        
+        public FrontEndChangePasswordResponse(CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class FrontEndChangePasswordResponseBody {
+        
+        public FrontEndChangePasswordResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndAddHotelBookingRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndAddHotelBooking", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingRequestBody Body;
+        
+        public FrontEndAddHotelBookingRequest() {
+        }
+        
+        public FrontEndAddHotelBookingRequest(CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndAddHotelBookingRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string json;
+        
+        public FrontEndAddHotelBookingRequestBody() {
+        }
+        
+        public FrontEndAddHotelBookingRequestBody(string json) {
+            this.json = json;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndAddHotelBookingResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndAddHotelBookingResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingResponseBody Body;
+        
+        public FrontEndAddHotelBookingResponse() {
+        }
+        
+        public FrontEndAddHotelBookingResponse(CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class FrontEndAddHotelBookingResponseBody {
+        
+        public FrontEndAddHotelBookingResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndAddHomestayBookingRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndAddHomestayBooking", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingRequestBody Body;
+        
+        public FrontEndAddHomestayBookingRequest() {
+        }
+        
+        public FrontEndAddHomestayBookingRequest(CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FrontEndAddHomestayBookingRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string json;
+        
+        public FrontEndAddHomestayBookingRequestBody() {
+        }
+        
+        public FrontEndAddHomestayBookingRequestBody(string json) {
+            this.json = json;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FrontEndAddHomestayBookingResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FrontEndAddHomestayBookingResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingResponseBody Body;
+        
+        public FrontEndAddHomestayBookingResponse() {
+        }
+        
+        public FrontEndAddHomestayBookingResponse(CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class FrontEndAddHomestayBookingResponseBody {
+        
+        public FrontEndAddHomestayBookingResponseBody() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WebService1SoapChannel : CNW_N8_MVC.ServiceReference1.WebService1Soap, System.ServiceModel.IClientChannel {
     }
@@ -829,26 +1771,30 @@ namespace CNW_N8_MVC.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CNW_N8_MVC.ServiceReference1.HelloWorldResponse CNW_N8_MVC.ServiceReference1.WebService1Soap.HelloWorld(CNW_N8_MVC.ServiceReference1.HelloWorldRequest request) {
-            return base.Channel.HelloWorld(request);
+        CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormResponse CNW_N8_MVC.ServiceReference1.WebService1Soap.DangNhapAppWinForm(CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormRequest request) {
+            return base.Channel.DangNhapAppWinForm(request);
         }
         
-        public string HelloWorld() {
-            CNW_N8_MVC.ServiceReference1.HelloWorldRequest inValue = new CNW_N8_MVC.ServiceReference1.HelloWorldRequest();
-            inValue.Body = new CNW_N8_MVC.ServiceReference1.HelloWorldRequestBody();
-            CNW_N8_MVC.ServiceReference1.HelloWorldResponse retVal = ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).HelloWorld(inValue);
-            return retVal.Body.HelloWorldResult;
+        public string DangNhapAppWinForm(string username, string password) {
+            CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormRequest inValue = new CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormRequestBody();
+            inValue.Body.username = username;
+            inValue.Body.password = password;
+            CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormResponse retVal = ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).DangNhapAppWinForm(inValue);
+            return retVal.Body.DangNhapAppWinFormResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.HelloWorldResponse> CNW_N8_MVC.ServiceReference1.WebService1Soap.HelloWorldAsync(CNW_N8_MVC.ServiceReference1.HelloWorldRequest request) {
-            return base.Channel.HelloWorldAsync(request);
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormResponse> CNW_N8_MVC.ServiceReference1.WebService1Soap.DangNhapAppWinFormAsync(CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormRequest request) {
+            return base.Channel.DangNhapAppWinFormAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.HelloWorldResponse> HelloWorldAsync() {
-            CNW_N8_MVC.ServiceReference1.HelloWorldRequest inValue = new CNW_N8_MVC.ServiceReference1.HelloWorldRequest();
-            inValue.Body = new CNW_N8_MVC.ServiceReference1.HelloWorldRequestBody();
-            return ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).HelloWorldAsync(inValue);
+        public System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormResponse> DangNhapAppWinFormAsync(string username, string password) {
+            CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormRequest inValue = new CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormRequestBody();
+            inValue.Body.username = username;
+            inValue.Body.password = password;
+            return ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).DangNhapAppWinFormAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1117,6 +2063,326 @@ namespace CNW_N8_MVC.ServiceReference1 {
             inValue.Body = new CNW_N8_MVC.ServiceReference1.GetListBooking_BERequestBody();
             inValue.Body.key = key;
             return ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).GetListBooking_BEAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayResponse CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndGetListHomestay(CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayRequest request) {
+            return base.Channel.FrontEndGetListHomestay(request);
+        }
+        
+        public string FrontEndGetListHomestay() {
+            CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayRequestBody();
+            CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayResponse retVal = ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndGetListHomestay(inValue);
+            return retVal.Body.FrontEndGetListHomestayResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayResponse> CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndGetListHomestayAsync(CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayRequest request) {
+            return base.Channel.FrontEndGetListHomestayAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayResponse> FrontEndGetListHomestayAsync() {
+            CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayRequestBody();
+            return ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndGetListHomestayAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelResponse CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndGetListHotel(CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelRequest request) {
+            return base.Channel.FrontEndGetListHotel(request);
+        }
+        
+        public string FrontEndGetListHotel() {
+            CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelRequestBody();
+            CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelResponse retVal = ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndGetListHotel(inValue);
+            return retVal.Body.FrontEndGetListHotelResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelResponse> CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndGetListHotelAsync(CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelRequest request) {
+            return base.Channel.FrontEndGetListHotelAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelResponse> FrontEndGetListHotelAsync() {
+            CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelRequestBody();
+            return ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndGetListHotelAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdResponse CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndFindHomestayById(CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdRequest request) {
+            return base.Channel.FrontEndFindHomestayById(request);
+        }
+        
+        public string FrontEndFindHomestayById(int id) {
+            CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdRequestBody();
+            inValue.Body.id = id;
+            CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdResponse retVal = ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndFindHomestayById(inValue);
+            return retVal.Body.FrontEndFindHomestayByIdResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdResponse> CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndFindHomestayByIdAsync(CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdRequest request) {
+            return base.Channel.FrontEndFindHomestayByIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdResponse> FrontEndFindHomestayByIdAsync(int id) {
+            CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdRequestBody();
+            inValue.Body.id = id;
+            return ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndFindHomestayByIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdResponse CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndFindHotelById(CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdRequest request) {
+            return base.Channel.FrontEndFindHotelById(request);
+        }
+        
+        public string FrontEndFindHotelById(int id) {
+            CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdRequestBody();
+            inValue.Body.id = id;
+            CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdResponse retVal = ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndFindHotelById(inValue);
+            return retVal.Body.FrontEndFindHotelByIdResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdResponse> CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndFindHotelByIdAsync(CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdRequest request) {
+            return base.Channel.FrontEndFindHotelByIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdResponse> FrontEndFindHotelByIdAsync(int id) {
+            CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdRequestBody();
+            inValue.Body.id = id;
+            return ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndFindHotelByIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationResponse CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndGetListLocation(CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationRequest request) {
+            return base.Channel.FrontEndGetListLocation(request);
+        }
+        
+        public string FrontEndGetListLocation() {
+            CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationRequestBody();
+            CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationResponse retVal = ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndGetListLocation(inValue);
+            return retVal.Body.FrontEndGetListLocationResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationResponse> CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndGetListLocationAsync(CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationRequest request) {
+            return base.Channel.FrontEndGetListLocationAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationResponse> FrontEndGetListLocationAsync() {
+            CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationRequestBody();
+            return ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndGetListLocationAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CNW_N8_MVC.ServiceReference1.FrontEndLoginResponse CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndLogin(CNW_N8_MVC.ServiceReference1.FrontEndLoginRequest request) {
+            return base.Channel.FrontEndLogin(request);
+        }
+        
+        public string FrontEndLogin(string username, string password) {
+            CNW_N8_MVC.ServiceReference1.FrontEndLoginRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndLoginRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndLoginRequestBody();
+            inValue.Body.username = username;
+            inValue.Body.password = password;
+            CNW_N8_MVC.ServiceReference1.FrontEndLoginResponse retVal = ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndLogin(inValue);
+            return retVal.Body.FrontEndLoginResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndLoginResponse> CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndLoginAsync(CNW_N8_MVC.ServiceReference1.FrontEndLoginRequest request) {
+            return base.Channel.FrontEndLoginAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndLoginResponse> FrontEndLoginAsync(string username, string password) {
+            CNW_N8_MVC.ServiceReference1.FrontEndLoginRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndLoginRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndLoginRequestBody();
+            inValue.Body.username = username;
+            inValue.Body.password = password;
+            return ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndLoginAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdResponse CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndFindUserById(CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdRequest request) {
+            return base.Channel.FrontEndFindUserById(request);
+        }
+        
+        public string FrontEndFindUserById(int id) {
+            CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdRequestBody();
+            inValue.Body.id = id;
+            CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdResponse retVal = ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndFindUserById(inValue);
+            return retVal.Body.FrontEndFindUserByIdResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdResponse> CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndFindUserByIdAsync(CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdRequest request) {
+            return base.Channel.FrontEndFindUserByIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdResponse> FrontEndFindUserByIdAsync(int id) {
+            CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdRequestBody();
+            inValue.Body.id = id;
+            return ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndFindUserByIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameResponse CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndFindUserByUsername(CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameRequest request) {
+            return base.Channel.FrontEndFindUserByUsername(request);
+        }
+        
+        public string FrontEndFindUserByUsername(string username) {
+            CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameRequestBody();
+            inValue.Body.username = username;
+            CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameResponse retVal = ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndFindUserByUsername(inValue);
+            return retVal.Body.FrontEndFindUserByUsernameResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameResponse> CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndFindUserByUsernameAsync(CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameRequest request) {
+            return base.Channel.FrontEndFindUserByUsernameAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameResponse> FrontEndFindUserByUsernameAsync(string username) {
+            CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameRequestBody();
+            inValue.Body.username = username;
+            return ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndFindUserByUsernameAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CNW_N8_MVC.ServiceReference1.FrontEndRegisterResponse CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndRegister(CNW_N8_MVC.ServiceReference1.FrontEndRegisterRequest request) {
+            return base.Channel.FrontEndRegister(request);
+        }
+        
+        public void FrontEndRegister(string json) {
+            CNW_N8_MVC.ServiceReference1.FrontEndRegisterRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndRegisterRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndRegisterRequestBody();
+            inValue.Body.json = json;
+            CNW_N8_MVC.ServiceReference1.FrontEndRegisterResponse retVal = ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndRegister(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndRegisterResponse> CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndRegisterAsync(CNW_N8_MVC.ServiceReference1.FrontEndRegisterRequest request) {
+            return base.Channel.FrontEndRegisterAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndRegisterResponse> FrontEndRegisterAsync(string json) {
+            CNW_N8_MVC.ServiceReference1.FrontEndRegisterRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndRegisterRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndRegisterRequestBody();
+            inValue.Body.json = json;
+            return ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndRegisterAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoResponse CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndUpdateUserInfo(CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoRequest request) {
+            return base.Channel.FrontEndUpdateUserInfo(request);
+        }
+        
+        public void FrontEndUpdateUserInfo(int id, string json) {
+            CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.json = json;
+            CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoResponse retVal = ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndUpdateUserInfo(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoResponse> CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndUpdateUserInfoAsync(CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoRequest request) {
+            return base.Channel.FrontEndUpdateUserInfoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoResponse> FrontEndUpdateUserInfoAsync(int id, string json) {
+            CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.json = json;
+            return ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndUpdateUserInfoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordResponse CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndChangePassword(CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordRequest request) {
+            return base.Channel.FrontEndChangePassword(request);
+        }
+        
+        public void FrontEndChangePassword(int id, string password) {
+            CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.password = password;
+            CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordResponse retVal = ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndChangePassword(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordResponse> CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndChangePasswordAsync(CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordRequest request) {
+            return base.Channel.FrontEndChangePasswordAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordResponse> FrontEndChangePasswordAsync(int id, string password) {
+            CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.password = password;
+            return ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndChangePasswordAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingResponse CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndAddHotelBooking(CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingRequest request) {
+            return base.Channel.FrontEndAddHotelBooking(request);
+        }
+        
+        public void FrontEndAddHotelBooking(string json) {
+            CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingRequestBody();
+            inValue.Body.json = json;
+            CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingResponse retVal = ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndAddHotelBooking(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingResponse> CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndAddHotelBookingAsync(CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingRequest request) {
+            return base.Channel.FrontEndAddHotelBookingAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingResponse> FrontEndAddHotelBookingAsync(string json) {
+            CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingRequestBody();
+            inValue.Body.json = json;
+            return ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndAddHotelBookingAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingResponse CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndAddHomestayBooking(CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingRequest request) {
+            return base.Channel.FrontEndAddHomestayBooking(request);
+        }
+        
+        public void FrontEndAddHomestayBooking(string json) {
+            CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingRequestBody();
+            inValue.Body.json = json;
+            CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingResponse retVal = ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndAddHomestayBooking(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingResponse> CNW_N8_MVC.ServiceReference1.WebService1Soap.FrontEndAddHomestayBookingAsync(CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingRequest request) {
+            return base.Channel.FrontEndAddHomestayBookingAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingResponse> FrontEndAddHomestayBookingAsync(string json) {
+            CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingRequest inValue = new CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingRequest();
+            inValue.Body = new CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingRequestBody();
+            inValue.Body.json = json;
+            return ((CNW_N8_MVC.ServiceReference1.WebService1Soap)(this)).FrontEndAddHomestayBookingAsync(inValue);
         }
     }
 }

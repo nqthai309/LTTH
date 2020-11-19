@@ -4,14 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CNW_N8_MVC.Models;
+using Newtonsoft.Json;
 
 namespace CNW_N8_MVC.Controllers
 {
     public class UserController : Controller
     {
         Model1 context = new Model1();
-        public static int idAccount=0;
-        public static string userName=null;
+        public static int idAccount = 0;
+        public static string userName = null;
+        static ServiceReference1.WebService1SoapClient client = new ServiceReference1.WebService1SoapClient();
         // GET: User
         public ActionResult Index()
         {
@@ -35,7 +37,7 @@ namespace CNW_N8_MVC.Controllers
         [HttpGet]
         public ActionResult LoginCenter(user acc)
         {
-            var result = context.users.Where(a => (a.username == acc.username && a.password == acc.password)).FirstOrDefault();
+            var result = JsonConvert.DeserializeObject<user>(client.FrontEndLogin(acc.username,acc.password));
             if (result != null)
             {
                     Session["Login"] = acc;
@@ -50,8 +52,7 @@ namespace CNW_N8_MVC.Controllers
 
         public int checkMK(string user, string pass)
         {
-            var result = context.users.Where(a => (a.username == user && a.password == pass)).FirstOrDefault();
-            
+            var result = JsonConvert.DeserializeObject<user>(client.FrontEndLogin(user, pass));
             if (result != null)
             {
                 return 1;
@@ -69,7 +70,7 @@ namespace CNW_N8_MVC.Controllers
             }
             else
             {
-                var result = context.users.Where(a => a.username == user).FirstOrDefault();
+                var result = JsonConvert.DeserializeObject<user>(client.FrontEndFindUserByUsername(user));
                 if (result != null)
                 {
                     return 1;
@@ -83,8 +84,7 @@ namespace CNW_N8_MVC.Controllers
         
         public int checkNewPassword(string nowPassword, string newPassword, string NewPassword2)
         {
-            
-            var result = context.users.Find(idAccount);
+            var result = JsonConvert.DeserializeObject<user>(client.FrontEndFindUserById(idAccount));
             if(result.password == nowPassword && newPassword != "" && NewPassword2 != "")
             {
                 if(newPassword == NewPassword2)
@@ -110,16 +110,8 @@ namespace CNW_N8_MVC.Controllers
         [HttpPost]
         public ActionResult RegisterCenter(user acc)
         {
-            user newAcc = new user();
-            newAcc.username = acc.username;
-            newAcc.password = acc.password;
-            newAcc.full_name = acc.full_name;
-            newAcc.phone = acc.phone;
-            newAcc.address = acc.address;
-            newAcc.email = acc.email;
-            newAcc.role_id = 1;
-            context.users.Add(newAcc);
-            context.SaveChanges();
+            acc.role_id = 1;
+            client.FrontEndRegister(JsonConvert.SerializeObject(acc));
             return RedirectToAction("Login","User");
 
         }
@@ -132,7 +124,7 @@ namespace CNW_N8_MVC.Controllers
             }
             else
             {
-                var acc = context.users.Find(idAccount);
+                var acc = JsonConvert.DeserializeObject<user>(client.FrontEndFindUserById(idAccount));
                 ViewData["username"] = userName;
                 ViewData["acc"] = acc;
                 return View();
@@ -162,21 +154,20 @@ namespace CNW_N8_MVC.Controllers
         [HttpPost]
         public ActionResult UserChanges(user acc)
         {
-            var obj = context.users.Find(idAccount);
+            var obj = JsonConvert.DeserializeObject<user>(client.FrontEndFindUserById(idAccount));
             obj.full_name = acc.full_name;
             obj.phone = acc.phone;
             obj.email = acc.email;
             obj.address = acc.address;
-
-            context.SaveChanges();
-
-            return RedirectToAction("Config", "User");
+            string json = JsonConvert.SerializeObject(obj);
+            client.FrontEndUpdateUserInfo(idAccount, json);
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
         public ActionResult PasswordChanges(string password, string newPassword1, string newPassword2)
         {
-            var obj = context.users.Find(idAccount);
+            var obj = JsonConvert.DeserializeObject<user>(client.FrontEndFindUserById(idAccount));
             if (password == "" || newPassword1 == "" || newPassword2 == "")
             {
                 //Điền Thiếu thông tin//
@@ -189,8 +180,7 @@ namespace CNW_N8_MVC.Controllers
                 {
                     if (newPassword1 == newPassword2)
                     {
-                        obj.password = newPassword1;
-                        context.SaveChanges();
+                        client.FrontEndChangePassword(obj.id, newPassword1);
                         return RedirectToAction("Index", "Home");
                     }
                     else
@@ -217,7 +207,7 @@ namespace CNW_N8_MVC.Controllers
             {
                 if (status_checking == "hotel")
                 {
-                    var result = context.hotels.Find(a);
+                    var result = JsonConvert.DeserializeObject<user>(client.FrontEndFindHotelById(a));
                     var product = new Product(result.id.ToString(), "hotel", checkin);
                     var cart = (Cart)Session["CartSession"];
                     if(cart != null)
@@ -232,7 +222,7 @@ namespace CNW_N8_MVC.Controllers
                 }
                 else if(status_checking == "homestay")
                 {
-                    var result = context.homestays.Find(a);
+                    var result = JsonConvert.DeserializeObject<user>(client.FrontEndFindHomestayById(a));
                     var product = new Product(result.id.ToString(), "homestay", checkin);
                     var cart = (Cart)Session["CartSession"];
                     if (cart != null)
@@ -287,9 +277,7 @@ namespace CNW_N8_MVC.Controllers
                         ht_booking.from_date = checkin;
                         ht_booking.to_date = checkout;
                         ht_booking.total_price = ((int)t.TotalDays * int.Parse(it.Product.Sell_price));
-
-                        context.hotel_booking.Add(ht_booking);
-                        context.SaveChanges();
+                        client.FrontEndAddHotelBooking(JsonConvert.SerializeObject(ht_booking));
 
                         
 
@@ -311,11 +299,9 @@ namespace CNW_N8_MVC.Controllers
                         hstay_booking.from_date = checkin;
                         hstay_booking.to_date = checkout;
                         hstay_booking.total_price = ((int)t.TotalDays * int.Parse(it.Product.Sell_price));
+                        client.FrontEndAddHomestayBooking(JsonConvert.SerializeObject(hstay_booking));
 
-                        context.homestay_booking.Add(hstay_booking);
-                        context.SaveChanges();
 
-                        
                     }   
                 }
                 cart.Clear();

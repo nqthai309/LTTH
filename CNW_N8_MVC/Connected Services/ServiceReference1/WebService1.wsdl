@@ -2,13 +2,18 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="HelloWorld">
-        <s:complexType />
-      </s:element>
-      <s:element name="HelloWorldResponse">
+      <s:element name="DangNhapAppWinForm">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DangNhapAppWinFormResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DangNhapAppWinFormResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -149,13 +154,166 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="FrontEndGetListHomestay">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndGetListHomestayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndGetListHomestayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetListHotel">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndGetListHotelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndGetListHotelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndFindHomestayById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndFindHomestayByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndFindHomestayByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndFindHotelById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndFindHotelByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndFindHotelByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndGetListLocation">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndGetListLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndGetListLocationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndFindUserById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndFindUserByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndFindUserByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndFindUserByUsername">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndFindUserByUsernameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FrontEndFindUserByUsernameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndRegister">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndRegisterResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndUpdateUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndUpdateUserInfoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndChangePasswordResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndAddHotelBooking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndAddHotelBookingResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FrontEndAddHomestayBooking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FrontEndAddHomestayBookingResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="HelloWorldSoapIn">
-    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  <wsdl:message name="DangNhapAppWinFormSoapIn">
+    <wsdl:part name="parameters" element="tns:DangNhapAppWinForm" />
   </wsdl:message>
-  <wsdl:message name="HelloWorldSoapOut">
-    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  <wsdl:message name="DangNhapAppWinFormSoapOut">
+    <wsdl:part name="parameters" element="tns:DangNhapAppWinFormResponse" />
   </wsdl:message>
   <wsdl:message name="GetListUser_BESoapIn">
     <wsdl:part name="parameters" element="tns:GetListUser_BE" />
@@ -235,10 +393,88 @@
   <wsdl:message name="GetListBooking_BESoapOut">
     <wsdl:part name="parameters" element="tns:GetListBooking_BEResponse" />
   </wsdl:message>
+  <wsdl:message name="FrontEndGetListHomestaySoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListHomestay" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListHomestaySoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListHomestayResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListHotelSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListHotel" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListHotelSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListHotelResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndFindHomestayByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndFindHomestayById" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndFindHomestayByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndFindHomestayByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndFindHotelByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndFindHotelById" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndFindHotelByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndFindHotelByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListLocation" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndGetListLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndGetListLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndLogin" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndFindUserByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndFindUserById" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndFindUserByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndFindUserByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndFindUserByUsernameSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndFindUserByUsername" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndFindUserByUsernameSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndFindUserByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndRegisterSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndRegister" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndRegisterSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndRegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndUpdateUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndUpdateUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndUpdateUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndUpdateUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndAddHotelBookingSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndAddHotelBooking" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndAddHotelBookingSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndAddHotelBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndAddHomestayBookingSoapIn">
+    <wsdl:part name="parameters" element="tns:FrontEndAddHomestayBooking" />
+  </wsdl:message>
+  <wsdl:message name="FrontEndAddHomestayBookingSoapOut">
+    <wsdl:part name="parameters" element="tns:FrontEndAddHomestayBookingResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebService1Soap">
-    <wsdl:operation name="HelloWorld">
-      <wsdl:input message="tns:HelloWorldSoapIn" />
-      <wsdl:output message="tns:HelloWorldSoapOut" />
+    <wsdl:operation name="DangNhapAppWinForm">
+      <wsdl:input message="tns:DangNhapAppWinFormSoapIn" />
+      <wsdl:output message="tns:DangNhapAppWinFormSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetListUser_BE">
       <wsdl:input message="tns:GetListUser_BESoapIn" />
@@ -292,11 +528,63 @@
       <wsdl:input message="tns:GetListBooking_BESoapIn" />
       <wsdl:output message="tns:GetListBooking_BESoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHomestay">
+      <wsdl:input message="tns:FrontEndGetListHomestaySoapIn" />
+      <wsdl:output message="tns:FrontEndGetListHomestaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHotel">
+      <wsdl:input message="tns:FrontEndGetListHotelSoapIn" />
+      <wsdl:output message="tns:FrontEndGetListHotelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindHomestayById">
+      <wsdl:input message="tns:FrontEndFindHomestayByIdSoapIn" />
+      <wsdl:output message="tns:FrontEndFindHomestayByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindHotelById">
+      <wsdl:input message="tns:FrontEndFindHotelByIdSoapIn" />
+      <wsdl:output message="tns:FrontEndFindHotelByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListLocation">
+      <wsdl:input message="tns:FrontEndGetListLocationSoapIn" />
+      <wsdl:output message="tns:FrontEndGetListLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndLogin">
+      <wsdl:input message="tns:FrontEndLoginSoapIn" />
+      <wsdl:output message="tns:FrontEndLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindUserById">
+      <wsdl:input message="tns:FrontEndFindUserByIdSoapIn" />
+      <wsdl:output message="tns:FrontEndFindUserByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindUserByUsername">
+      <wsdl:input message="tns:FrontEndFindUserByUsernameSoapIn" />
+      <wsdl:output message="tns:FrontEndFindUserByUsernameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndRegister">
+      <wsdl:input message="tns:FrontEndRegisterSoapIn" />
+      <wsdl:output message="tns:FrontEndRegisterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndUpdateUserInfo">
+      <wsdl:input message="tns:FrontEndUpdateUserInfoSoapIn" />
+      <wsdl:output message="tns:FrontEndUpdateUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndChangePassword">
+      <wsdl:input message="tns:FrontEndChangePasswordSoapIn" />
+      <wsdl:output message="tns:FrontEndChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndAddHotelBooking">
+      <wsdl:input message="tns:FrontEndAddHotelBookingSoapIn" />
+      <wsdl:output message="tns:FrontEndAddHotelBookingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndAddHomestayBooking">
+      <wsdl:input message="tns:FrontEndAddHomestayBookingSoapIn" />
+      <wsdl:output message="tns:FrontEndAddHomestayBookingSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="HelloWorld">
-      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+    <wsdl:operation name="DangNhapAppWinForm">
+      <soap:operation soapAction="http://tempuri.org/DangNhapAppWinForm" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -421,11 +709,128 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHomestay">
+      <soap:operation soapAction="http://tempuri.org/FrontEndGetListHomestay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHotel">
+      <soap:operation soapAction="http://tempuri.org/FrontEndGetListHotel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindHomestayById">
+      <soap:operation soapAction="http://tempuri.org/FrontEndFindHomestayById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindHotelById">
+      <soap:operation soapAction="http://tempuri.org/FrontEndFindHotelById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListLocation">
+      <soap:operation soapAction="http://tempuri.org/FrontEndGetListLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndLogin">
+      <soap:operation soapAction="http://tempuri.org/FrontEndLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindUserById">
+      <soap:operation soapAction="http://tempuri.org/FrontEndFindUserById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindUserByUsername">
+      <soap:operation soapAction="http://tempuri.org/FrontEndFindUserByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndRegister">
+      <soap:operation soapAction="http://tempuri.org/FrontEndRegister" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndUpdateUserInfo">
+      <soap:operation soapAction="http://tempuri.org/FrontEndUpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndChangePassword">
+      <soap:operation soapAction="http://tempuri.org/FrontEndChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndAddHotelBooking">
+      <soap:operation soapAction="http://tempuri.org/FrontEndAddHotelBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndAddHomestayBooking">
+      <soap:operation soapAction="http://tempuri.org/FrontEndAddHomestayBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="HelloWorld">
-      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+    <wsdl:operation name="DangNhapAppWinForm">
+      <soap12:operation soapAction="http://tempuri.org/DangNhapAppWinForm" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -543,6 +948,123 @@
     </wsdl:operation>
     <wsdl:operation name="GetListBooking_BE">
       <soap12:operation soapAction="http://tempuri.org/GetListBooking_BE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHomestay">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndGetListHomestay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListHotel">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndGetListHotel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindHomestayById">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndFindHomestayById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindHotelById">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndFindHotelById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndGetListLocation">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndGetListLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndLogin">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindUserById">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndFindUserById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndFindUserByUsername">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndFindUserByUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndRegister">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndRegister" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndUpdateUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndUpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndChangePassword">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndAddHotelBooking">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndAddHotelBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FrontEndAddHomestayBooking">
+      <soap12:operation soapAction="http://tempuri.org/FrontEndAddHomestayBooking" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
