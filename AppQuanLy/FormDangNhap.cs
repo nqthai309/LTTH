@@ -29,7 +29,7 @@ namespace AppQuanLy
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
             string result = client.DangNhapAppWinForm(username, password);
-            if(result == "1")
+            if(result == "1") 
             {
                 MessageBox.Show("thanh cong");
             }

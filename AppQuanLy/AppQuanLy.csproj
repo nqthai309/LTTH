@@ -39,6 +39,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -61,11 +64,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="FormBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBooking.Designer.cs">
+      <DependentUpon>FormBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHomestay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHomestay.Designer.cs">
+      <DependentUpon>FormHomestay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHotel.Designer.cs">
+      <DependentUpon>FormHotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQuanTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuanTri.Designer.cs">
+      <DependentUpon>FormQuanTri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUser.Designer.cs">
+      <DependentUpon>FormUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\homestay.cs" />
     <Compile Include="Models\homestay_booking.cs" />
@@ -77,8 +110,23 @@
     <Compile Include="Models\user.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormBooking.resx">
+      <DependentUpon>FormBooking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHomestay.resx">
+      <DependentUpon>FormHomestay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHotel.resx">
+      <DependentUpon>FormHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQuanTri.resx">
+      <DependentUpon>FormQuanTri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUser.resx">
+      <DependentUpon>FormUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -124,6 +172,7 @@
     </None>
     <None Include="Connected Services\ServiceReference1\WebService1.wsdl" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AppQuanLy.Models.user.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
