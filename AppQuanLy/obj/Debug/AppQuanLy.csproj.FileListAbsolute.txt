@@ -1,0 +1,14 @@
+D:\LTTH3\AppQuanLy\bin\Debug\AppQuanLy.exe.config
+D:\LTTH3\AppQuanLy\bin\Debug\AppQuanLy.exe
+D:\LTTH3\AppQuanLy\bin\Debug\AppQuanLy.pdb
+D:\LTTH3\AppQuanLy\obj\Debug\AppQuanLy.csprojAssemblyReference.cache
+D:\LTTH3\AppQuanLy\obj\Debug\AppQuanLy.FormDangNhap.resources
+D:\LTTH3\AppQuanLy\obj\Debug\AppQuanLy.Properties.Resources.resources
+D:\LTTH3\AppQuanLy\obj\Debug\AppQuanLy.csproj.GenerateResource.cache
+D:\LTTH3\AppQuanLy\obj\Debug\AppQuanLy.exe
+D:\LTTH3\AppQuanLy\obj\Debug\AppQuanLy.pdb
+D:\LTTH3\AppQuanLy\bin\Debug\EntityFramework.dll
+D:\LTTH3\AppQuanLy\bin\Debug\EntityFramework.SqlServer.dll
+D:\LTTH3\AppQuanLy\bin\Debug\EntityFramework.xml
+D:\LTTH3\AppQuanLy\bin\Debug\EntityFramework.SqlServer.xml
+D:\LTTH3\AppQuanLy\obj\Debug\AppQuanLy.csproj.CopyComplete

@@ -22,9 +22,17 @@ namespace WebApplication3
         Model1 context = new Model1();
 
         [WebMethod]
-        public string HelloWorld()
+        public string DangNhapAppWinForm(string username, string password)
         {
-            return "Hello World";
+            var list = context.users.Where(x => x.id != 0).ToList();
+            foreach(var item in list)
+            {
+                if(username == item.username && password == item.password)
+                {
+                    return "1";
+                }
+            }
+            return "0";
         }
 
         [WebMethod]
