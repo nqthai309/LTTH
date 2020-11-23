@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace WebApplication3
     public class WebService1 : System.Web.Services.WebService
     {
         Model1 context = new Model1();
+        IPagedList<homestay> model;
         //------------------------THAI----------------------------------
         [WebMethod]
         public string DangNhapAppWinForm(string username, string password)
@@ -346,6 +348,103 @@ namespace WebApplication3
         //------------------------THANG----------------------------------
         //------------------------HIEU----------------------------------
         //homestay
+        [WebMethod]
+        public string FEFindHomestayByPriceMedium(int page, string txtSearch, string locationSelected)
+        {
+            var result = context.homestays.OrderByDescending(h => h.id).Where(h => (h.location.location_name.ToLower() == locationSelected.ToLower() && (h.sell_price >= 300000 && h.sell_price < 500000) && h.homestay_name.ToLower().Contains(txtSearch.ToLower()))).ToPagedList(page , 9);
+            string json = JsonConvert.SerializeObject(result, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+        [WebMethod]
+        public string FEFindHomestayByPriceHigh(int page, string txtSearch, string locationSelected)
+        {
+            var result = context.homestays.OrderByDescending(h => h.id).Where(h => (h.location.location_name.ToLower() == locationSelected.ToLower() && (h.sell_price >= 500000) && h.homestay_name.ToLower().Contains(txtSearch.ToLower()))).ToPagedList(page , 9);
+            string json = JsonConvert.SerializeObject(result, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+
+        [WebMethod]
+        public string FEFindHomestayByPriceLow(int page, string txtSearch, string locationSelected)
+        {
+            var result = context.homestays.OrderByDescending(h => h.id).Where(h => (h.location.location_name.ToLower() == locationSelected.ToLower() && (h.sell_price < 300000) && h.homestay_name.ToLower().Contains(txtSearch.ToLower()))).ToPagedList(page, 9);
+            string json = JsonConvert.SerializeObject(result, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+
+        [WebMethod]
+        public string FEGetListHomestays(int page)
+        {
+            var list = context.homestays.OrderByDescending(h => h.id != 0).ToPagedList(page, 9);
+            string json = JsonConvert.SerializeObject(list, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+
+            /*var list = context.hotels.Where(x => x.id != 0).ToList();
+            string json = JsonConvert.SerializeObject(list, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;*/
+        }
+
+        [WebMethod]
+        public string FEGetDetailHomestay(int id)
+        {
+            var list = context.homestays.Where(x => x.id == id).FirstOrDefault();
+            string json = JsonConvert.SerializeObject(list, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+
+        [WebMethod]
+        public string FEGetDetailHomestay0()
+        {
+            var list = context.homestays.Where(x => x.id != 0).ToList();
+            string json = JsonConvert.SerializeObject(list, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+
+
+        [WebMethod]
+        public string FEAddItemHomestay(int id)
+        {
+            var result = context.homestays.Find(id);
+            string json = JsonConvert.SerializeObject(result, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+
+        [WebMethod]
+        public string FEAddItem1(int id)
+        {
+            var result = context.homestays.Find(id);
+            string json = JsonConvert.SerializeObject(result, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            var homestay = JsonConvert.DeserializeObject<homestay_booking>(json);
+            context.homestay_booking.Add(homestay);
+            context.SaveChanges();
+            return json;
+        }
         //------------------------HIEU----------------------------------
     }
 }
