@@ -158,6 +158,108 @@
     <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.EditUser_BEResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FEAddItem1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FEAddItemHomestayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FEFindHomestayByPriceHighResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FEFindHomestayByPriceLowResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FEFindHomestayByPriceMediumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FEGetDetailHomestay0Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FEGetDetailHomestayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FEGetListHomestaysResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FEMaxPriceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FEMinPriceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FEOpitionListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndAddHomestayBookingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndAddHotelBookingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndAddItemHotelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndChangePasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndFindHomestayByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndFindHotelByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndFindUserByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndFindUserByUsernameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndGetDetialHotelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndGetDetialHotelsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndGetListHomestayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndGetListHotelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndGetListHotelsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndGetListLocationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndMaxPriceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndMinPriceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndOpitionListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndRegisterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndSearchEngine_Price1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndSearchEngine_Price2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndSearchEngine_Price3Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndUpdateUserInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.GetListBooking_BEResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -172,6 +274,10 @@
     </None>
     <None Include="Connected Services\ServiceReference1\WebService1.wsdl" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AppQuanLy.Models.homestay.datasource" />
+    <None Include="Properties\DataSources\AppQuanLy.Models.homestay_booking.datasource" />
+    <None Include="Properties\DataSources\AppQuanLy.Models.hotel.datasource" />
+    <None Include="Properties\DataSources\AppQuanLy.Models.hotel_booking.datasource" />
     <None Include="Properties\DataSources\AppQuanLy.Models.user.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

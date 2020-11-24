@@ -17,6 +17,9 @@ namespace AppQuanLy
         {
             InitializeComponent();
             this.IsMdiContainer = true;
+            txtUsername.Text = FormDangNhap.acc.username;
+            txtFullName.Text = FormDangNhap.acc.full_name;
+            txtAddress.Text = FormDangNhap.acc.address;
         }
         private void AddForm(Form f)
         {

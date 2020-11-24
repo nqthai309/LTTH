@@ -46,5 +46,18 @@ namespace AppQuanLy.Models
         public virtual ICollection<homestay_booking> homestay_booking { get; set; }
 
         public virtual location location { get; set; }
+
+        public homestay(int location_id, string homestay_name, string image_url, string detail_header_image_url, string more_imformation_image_url, string description, string more_imformation, int price, int sell_price)
+        {
+            this.location_id = location_id;
+            this.homestay_name = homestay_name;
+            this.image_url = image_url;
+            this.detail_header_image_url = detail_header_image_url;
+            this.more_imformation_image_url = more_imformation_image_url;
+            this.description = description;
+            this.more_imformation = more_imformation;
+            this.price = price;
+            this.sell_price = sell_price;
+        }
     }
 }

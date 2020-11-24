@@ -31,5 +31,17 @@ namespace AppQuanLy.Models
 
         [StringLength(255)]
         public string address { get; set; }
+
+        public user( string username, string password, int role_id, string full_name, string email, string phone, string address)
+        {
+            
+            this.username = username;
+            this.password = password;
+            this.role_id = role_id;
+            this.full_name = full_name;
+            this.email = email;
+            this.phone = phone;
+            this.address = address;
+        }
     }
 }

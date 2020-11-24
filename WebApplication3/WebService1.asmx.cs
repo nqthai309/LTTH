@@ -26,9 +26,9 @@ namespace WebApplication3
             var list = context.users.Where(x => x.id != 0).ToList();
             foreach (var item in list)
             {
-                if (username == item.username && password == item.password)
+                if (username == item.username && password == item.password && item.role_id == 0)
                 {
-                    return "1";
+                    return JsonConvert.SerializeObject(item);
                 }
             }
             return "0";

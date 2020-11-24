@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppQuanLy.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace AppQuanLy
 {
     public partial class FormDangNhap : Form
     {
         static ServiceReference1.WebService1SoapClient client = new ServiceReference1.WebService1SoapClient();
+        public static user acc;
 
         public FormDangNhap()
         {
@@ -28,10 +31,14 @@ namespace AppQuanLy
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
-            string result = client.DangNhapAppWinForm(username, password);
-            if(result == "1") 
+            user result = JsonConvert.DeserializeObject<user>(client.DangNhapAppWinForm(username, password));
+            if(result.ToString() != "0") 
             {
                 MessageBox.Show("thanh cong");
+                acc = (user)result;
+                this.Hide();
+                FormQuanTri f = new FormQuanTri();
+                f.Show();
             }
             else
             {

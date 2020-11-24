@@ -16,7 +16,8 @@ namespace AppQuanLy
     public partial class FormUser : Form
     {
         static ServiceReference1.WebService1SoapClient client = new ServiceReference1.WebService1SoapClient();
-
+        List<string> userNames = new List<string>();
+        int id = -1;
         public FormUser()
         {
             InitializeComponent();
@@ -31,6 +32,10 @@ namespace AppQuanLy
         {
             var list = JsonConvert.DeserializeObject<List<user>>(client.GetListUser_BE());
             dtUser.DataSource = list;
+            foreach(var it in list)
+            {
+                userNames.Add(it.username);
+            }
         }
 
         private void dtUser_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -46,13 +51,88 @@ namespace AppQuanLy
                 txtEmail.Text = selectRow.Cells[5].Value.ToString().Trim();
                 txtPhone.Text = selectRow.Cells[6].Value.ToString().Trim();
                 txtAddress.Text = selectRow.Cells[7].Value.ToString().Trim();
-               
+                id = int.Parse(selectRow.Cells[0].Value.ToString().Trim());
 
                 //manv = selectRow.Cells[0].Value.ToString().Trim();
             }
             catch
             {
 
+            }
+        }
+        private int CheckInfo()
+        {
+            if(txtUsername.Text == "" || txtPassword.Text == "" || txtPhone.Text == "" || txtFullname.Text == "" || txtEmail.Text == "" ||
+                txtAddress.Text == "")
+            {
+                return -1;
+            }
+            else
+            {
+                return 1;
+            }
+        }
+        private void ClearTextBox()
+        {
+            txtUsername.Text = "";
+            txtPassword.Text = "";
+            txtFullname.Text = "";
+            txtPhone.Text = "";
+            txtEmail.Text = "";
+            txtAddress.Text = "";
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if(CheckInfo() == 1)
+            {
+                if (userNames.Contains(txtUsername.Text))
+                {
+                    MessageBox.Show("username bị trùng");
+                }
+                else
+                {
+                    user acc = new user(txtUsername.Text, txtPassword.Text, int.Parse(comboBoxRoleID.Text), txtFullname.Text, txtEmail.Text, txtPhone.Text, txtAddress.Text);
+                    client.AddUser_BE(JsonConvert.SerializeObject(acc));
+                
+                    FormUser_Load(sender, e);
+                    MessageBox.Show("Thêm Thành Công");
+                    ClearTextBox();
+                }
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if(id == -1)
+            {
+                MessageBox.Show("Bạn chưa chọn user");
+            }
+            else
+            {
+                client.DeleteUser_BE(id);
+                MessageBox.Show("Xoá thành công");
+                FormUser_Load(sender, e);
+                ClearTextBox();
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if(CheckInfo() == 1)
+            {
+                if (userNames.Contains(txtUsername.Text))
+                {
+                    MessageBox.Show("Username bị trùng");
+                }
+                else
+                {
+                    user acc = new user(txtUsername.Text, txtPassword.Text, int.Parse(comboBoxRoleID.Text), txtFullname.Text, txtEmail.Text, txtPhone.Text, txtAddress.Text);
+                    client.EditUser_BE(id, JsonConvert.SerializeObject(acc));
+                    MessageBox.Show("Sửa thành công");
+                    FormUser_Load(sender, e);
+                    ClearTextBox();
+                }
             }
         }
     }
