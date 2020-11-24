@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using PagedList;
 using PagedList.Mvc;
 using CNW_N8_MVC.Models;
+using Newtonsoft.Json;
 
 namespace CNW_N8_MVC.Controllers
 {
@@ -15,7 +16,7 @@ namespace CNW_N8_MVC.Controllers
         private Model1 context = new Model1();
         IPagedList<hotel> model;
         int quantity;
-        
+        static ServiceReference1.WebService1SoapClient client = new ServiceReference1.WebService1SoapClient();
         private void setUsername()
         {
             if (Session["Login"] == null)
@@ -34,15 +35,24 @@ namespace CNW_N8_MVC.Controllers
         }
         public ActionResult List(int? page)
         {
+
+            //int page1 = page.Value;
+            //dynamic model = new ExpandoObject();
             setUsername();
-            var optionList = context.locations.Where(o => o.id != null).ToList();
+            var optionList = JsonConvert.DeserializeObject<List<location>>(client.FrontEndOpitionList());
+            //var optionList = context.locations.Where(o => o.id != null).ToList();
             ViewData["optionList"] = optionList;
 
-            var model = context.hotels.OrderByDescending(h => h.id).ToPagedList(page ?? 1, 9);
-            ViewData["count"] = model.Count.ToString() ;
+            var model = JsonConvert.DeserializeObject<List<hotel>>(client.FrontEndGetListHotels(page)).ToPagedList(page ?? 1, 9);
+            //model.hotels = JsonConvert.DeserializeObject<List<hotel>>(client.FrontEndGetListHotels(page)).ToPagedList(page ?? 1, 9);
+            //var model = context.hotels.OrderByDescending(h => h.id).ToPagedList(page ?? 1, 9);
+            ViewData["count"] = model.Count.ToString();
 
-            var minPrice = context.hotels.Min(h => h.sell_price);
-            var maxPrice = context.hotels.Max(h => h.sell_price);
+            var minPrice = JsonConvert.DeserializeObject<int>(client.FrontEndMinPrice());
+            //var minPrice = context.hotels.Min(h => h.sell_price);
+
+            var maxPrice = JsonConvert.DeserializeObject<int>(client.FrontEndMaxPrice());
+            //var maxPrice = context.hotels.Max(h => h.sell_price);
             ViewData["minPrice"] = minPrice.ToString();
             ViewData["maxPrice"] = maxPrice.ToString();
 
@@ -53,28 +63,36 @@ namespace CNW_N8_MVC.Controllers
         [HttpGet]
         public ActionResult SearchEngine(int? page)
         {
+
             setUsername();
             var priceRange = Request["priceRange"];
             var locationSelect = Request["locationSelect"];
             var txtSearch = Request["txtSearch"];
 
-            var optionList = context.locations.Where(o => o.id != null).ToList();
+            var optionList = JsonConvert.DeserializeObject<List<location>>(client.FrontEndOpitionList());
+            //var optionList = context.locations.Where(o => o.id != null).ToList();
             ViewData["optionList"] = optionList;
             if (priceRange == "Dưới 300.000VNĐ")
             {
-                model = context.hotels.OrderByDescending(h => h.id).Where(h => (h.location.location_name == locationSelect && (h.sell_price < 300000) && h.hotel_name.Contains(txtSearch))).ToPagedList(page ?? 1, 9);
-               
+
+                //model = context.hotels.OrderByDescending(h => h.id).Where(h => (h.location.location_name == locationSelect && (h.sell_price < 300000) && h.hotel_name.Contains(txtSearch))).ToPagedList(page ?? 1, 9);
+                model = JsonConvert.DeserializeObject<List<hotel>>(client.FrontEndSearchEngine_Price1(page, txtSearch, locationSelect)).ToPagedList(page ?? 1, 9);
+
             }
-            if(priceRange == "300.000- 500.000VNĐ")
+            if (priceRange == "300.000- 500.000VNĐ")
             {
-               
-                 model = context.hotels.OrderByDescending(h => h.id).Where(h => (h.location.location_name == locationSelect && (h.sell_price >= 300000 && h.sell_price <500000) && h.hotel_name.Contains(txtSearch))).ToPagedList(page ?? 1, 9);
+
+                model = JsonConvert.DeserializeObject<List<hotel>>(client.FrontEndSearchEngine_Price2(page, txtSearch, locationSelect)).ToPagedList(page ?? 1, 9);
+
+                //model = context.hotels.OrderByDescending(h => h.id).Where(h => (h.location.location_name == locationSelect && (h.sell_price >= 300000 && h.sell_price <500000) && h.hotel_name.Contains(txtSearch))).ToPagedList(page ?? 1, 9);
             }
-            if(priceRange == "500.000- 1.000.000VNĐ")
+            if (priceRange == "500.000- 1.000.000VNĐ")
             {
-        
-                  model = context.hotels.OrderByDescending(h => h.id).Where(h => (h.location.location_name == locationSelect && (h.sell_price >= 500000 && h.sell_price < 1000000) && h.hotel_name.Contains(txtSearch))).ToPagedList(page ?? 1, 9);
+
+                model = JsonConvert.DeserializeObject<List<hotel>>(client.FrontEndSearchEngine_Price3(page, txtSearch, locationSelect)).ToPagedList(page ?? 1, 9);
+                //model = context.hotels.OrderByDescending(h => h.id).Where(h => (h.location.location_name == locationSelect && (h.sell_price >= 500000 && h.sell_price < 1000000) && h.hotel_name.Contains(txtSearch))).ToPagedList(page ?? 1, 9);
             }
+
             var minPrice = model.Min(h => h.sell_price);
             var maxPrice = model.Max(h => h.sell_price);
             ViewData["minPrice"] = minPrice.ToString();
@@ -85,18 +103,23 @@ namespace CNW_N8_MVC.Controllers
             ViewData["txtSearch"] = txtSearch.ToString();
 
 
-            return View("List",model);
+            return View("List", model);
         }
         public ActionResult Detail(int? id)
         {
+
             if (id.HasValue)
             {
-            setUsername();
-            dynamic model = new ExpandoObject();
-            model.hotels = context.hotels.Where(x => x.id != 0).ToList();
-            model.hotel = context.hotels.Where(x => x.id == id).FirstOrDefault();
-            ViewData["id"] = id.ToString();
-            return View(model);
+                setUsername();
+                dynamic model = new ExpandoObject();
+
+                model.hotel = JsonConvert.DeserializeObject<hotel>(client.FrontEndGetDetialHotel(id));
+                //model.hotels = context.hotels.Where(x => x.id != 0).ToList();
+                model.hotels = JsonConvert.DeserializeObject<List<hotel>>(client.FrontEndGetDetialHotels());
+                //model.hotel = context.hotels.Where(x => x.id == id).FirstOrDefault();
+                ViewData["id"] = id.ToString();
+                return View(model);
+
             }
             else
             {
@@ -107,7 +130,7 @@ namespace CNW_N8_MVC.Controllers
         [HttpGet]
         public ActionResult AddItemHotel(int id)
         {
-            if(Session["Login"] == null)
+            if (Session["Login"] == null)
             {
                 return RedirectToAction("Login", "User");
             }
@@ -126,11 +149,12 @@ namespace CNW_N8_MVC.Controllers
                     quantity = (int)t.TotalDays;
                 }
 
-                var hotel = context.hotels.Find(id);
+                //var hotel = context.hotels.Find(id);
+                var hotel = JsonConvert.DeserializeObject<hotel>(client.FrontEndAddItemHotel(id));
                 var cart = (Cart)Session["CartSession"];
                 if (cart != null)
                 {
-                    cart.AddItemHotel(hotel,checkIn.ToShortDateString(), checkOut.ToShortDateString(), quantity);
+                    cart.AddItemHotel(hotel, checkIn.ToShortDateString(), checkOut.ToShortDateString(), quantity);
                 }
                 else
                 {
@@ -141,13 +165,13 @@ namespace CNW_N8_MVC.Controllers
 
                 return RedirectToAction("Booking", "User");
             }
-            
+
 
         }
 
         public int checkDate(string checkin, string checkout)
         {
-            if(checkin == "" || checkout == "")
+            if (checkin == "" || checkout == "")
             {
                 return -1;
             }
@@ -156,7 +180,7 @@ namespace CNW_N8_MVC.Controllers
                 DateTime checkIn = Convert.ToDateTime(checkin);
                 DateTime checkOut = Convert.ToDateTime(checkout);
 
-                if(checkOut <= checkIn)
+                if (checkOut <= checkIn)
                 {
                     return -1;
                 }
