@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using PagedList;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Services;
 using WebApplication3.Models;
@@ -46,9 +47,54 @@ namespace WebApplication3
         public void EditUser_BE(int id_old, string json)
         {
             user acc = JsonConvert.DeserializeObject<user>(json);
-            var result = context.users.Find(id_old);
-            context.users.Remove(result);
             context.users.Add(acc);
+            context.SaveChanges();
+            var hotel_bookings = context.hotel_booking.Where(x => x.user_id == id_old).ToList();
+            
+            var homestay_bookings = context.homestay_booking.Where(x => x.user_id == id_old).ToList();
+            
+
+            foreach (var it in hotel_bookings)
+            {
+                hotel_booking htb = new hotel_booking(acc.id, acc.full_name, acc.email, acc.phone, acc.address, it.hotel_id, it.from_date, it.to_date, it.total_price);
+                context.hotel_booking.Add(htb);
+                context.SaveChanges();
+                context.hotel_booking.Remove(it);
+                context.SaveChanges();
+            }
+            foreach (var it in homestay_bookings)
+            {
+                homestay_booking hsb = new homestay_booking(acc.id, acc.full_name, acc.email, acc.phone, acc.address, it.homestay_id, it.from_date, it.to_date, it.total_price);
+                context.homestay_booking.Add(hsb);
+                context.SaveChanges();
+                context.homestay_booking.Remove(it);
+                context.SaveChanges();
+            }
+
+            //foreach (var it in hotel_bookings1)
+            //{
+            //    it.user_id = acc.id;
+            //    it.customer_name = acc.full_name;
+            //    it.customer_email = acc.email;
+            //    it.customer_phone = acc.phone;
+            //    it.customer_address = acc.address;
+                
+            //    //context.hotel_booking.Remove(context.hotel_booking.Find(it.id));
+            //    context.hotel_booking.Add(it);
+            //    context.SaveChanges();
+            //}
+            //foreach (var it in homestay_bookings1)
+            //{
+            //    it.user_id = acc.id;
+            //    it.customer_name = acc.full_name;
+            //    it.customer_email = acc.email;
+            //    it.customer_phone = acc.phone;
+            //    it.customer_address = acc.address;
+            //    //context.homestay_booking.Remove(context.homestay_booking.Find(it.id));
+            //    context.homestay_booking.Add(it);
+            //    context.SaveChanges();
+            //}
+            context.users.Remove(context.users.Find(id_old));
             context.SaveChanges();
         }
 

@@ -67,7 +67,6 @@
             this.dtHotel.AllowUserToAddRows = false;
             this.dtHotel.AllowUserToDeleteRows = false;
             this.dtHotel.AutoGenerateColumns = false;
-            this.dtHotel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtHotel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtHotel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -97,6 +96,7 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 69;
             // 
             // locationidDataGridViewTextBoxColumn
             // 
@@ -104,6 +104,7 @@
             this.locationidDataGridViewTextBoxColumn.HeaderText = "location_id";
             this.locationidDataGridViewTextBoxColumn.Name = "locationidDataGridViewTextBoxColumn";
             this.locationidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.locationidDataGridViewTextBoxColumn.Width = 70;
             // 
             // hotelnameDataGridViewTextBoxColumn
             // 
@@ -111,6 +112,7 @@
             this.hotelnameDataGridViewTextBoxColumn.HeaderText = "hotel_name";
             this.hotelnameDataGridViewTextBoxColumn.Name = "hotelnameDataGridViewTextBoxColumn";
             this.hotelnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hotelnameDataGridViewTextBoxColumn.Width = 69;
             // 
             // imageurlDataGridViewTextBoxColumn
             // 
@@ -118,6 +120,7 @@
             this.imageurlDataGridViewTextBoxColumn.HeaderText = "image_url";
             this.imageurlDataGridViewTextBoxColumn.Name = "imageurlDataGridViewTextBoxColumn";
             this.imageurlDataGridViewTextBoxColumn.ReadOnly = true;
+            this.imageurlDataGridViewTextBoxColumn.Width = 69;
             // 
             // detailheaderimageurlDataGridViewTextBoxColumn
             // 
@@ -125,6 +128,7 @@
             this.detailheaderimageurlDataGridViewTextBoxColumn.HeaderText = "detail_header_image_url";
             this.detailheaderimageurlDataGridViewTextBoxColumn.Name = "detailheaderimageurlDataGridViewTextBoxColumn";
             this.detailheaderimageurlDataGridViewTextBoxColumn.ReadOnly = true;
+            this.detailheaderimageurlDataGridViewTextBoxColumn.Width = 70;
             // 
             // moreimformationimageurlDataGridViewTextBoxColumn
             // 
@@ -132,6 +136,7 @@
             this.moreimformationimageurlDataGridViewTextBoxColumn.HeaderText = "more_imformation_image_url";
             this.moreimformationimageurlDataGridViewTextBoxColumn.Name = "moreimformationimageurlDataGridViewTextBoxColumn";
             this.moreimformationimageurlDataGridViewTextBoxColumn.ReadOnly = true;
+            this.moreimformationimageurlDataGridViewTextBoxColumn.Width = 69;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
@@ -139,6 +144,7 @@
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn.Width = 69;
             // 
             // moreimformationDataGridViewTextBoxColumn
             // 
@@ -146,6 +152,7 @@
             this.moreimformationDataGridViewTextBoxColumn.HeaderText = "more_imformation";
             this.moreimformationDataGridViewTextBoxColumn.Name = "moreimformationDataGridViewTextBoxColumn";
             this.moreimformationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.moreimformationDataGridViewTextBoxColumn.Width = 69;
             // 
             // priceDataGridViewTextBoxColumn
             // 
@@ -153,6 +160,7 @@
             this.priceDataGridViewTextBoxColumn.HeaderText = "price";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn.Width = 70;
             // 
             // sellpriceDataGridViewTextBoxColumn
             // 
@@ -160,6 +168,7 @@
             this.sellpriceDataGridViewTextBoxColumn.HeaderText = "sell_price";
             this.sellpriceDataGridViewTextBoxColumn.Name = "sellpriceDataGridViewTextBoxColumn";
             this.sellpriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sellpriceDataGridViewTextBoxColumn.Width = 69;
             // 
             // hotelBindingSource
             // 

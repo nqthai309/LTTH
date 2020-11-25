@@ -121,6 +121,7 @@ namespace AppQuanLy
         {
             if(CheckInfo() == 1)
             {
+                userNames.Remove(txtUsername.Text);
                 if (userNames.Contains(txtUsername.Text))
                 {
                     MessageBox.Show("Username bị trùng");

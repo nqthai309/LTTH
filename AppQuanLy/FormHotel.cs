@@ -107,13 +107,14 @@ namespace AppQuanLy
         {
             if(CheckInfo() == 1)
             {
+                hotelNames.Remove(txtHotelName.Text);
                 if (hotelNames.Contains(txtHotelName.Text))
                 {
                     MessageBox.Show("Tên hotel bị trùng");
                 }
                 else
                 {
-                    hotel hotels = new hotel(int.Parse(comboBoxLocation.Text), txtHotelName.Text, txtInfo.Text, "/Content/img/Group 70.png", "/Content/img/hotel-detail.jpg", "/Content/img/Group 69.png", txtDes.Text,
+                    hotel hotels = new hotel(int.Parse(comboBoxLocation.Text), txtHotelName.Text, "/Content/img/Group 70.png", "/Content/img/hotel-detail.jpg", "/Content/img/Group 69.png", txtDes.Text, txtInfo.Text,
                         int.Parse(txtPrice.Text), int.Parse(txtSellPrice.Text));
                     client.EditHotel_BE(id, JsonConvert.SerializeObject(hotels));
                     MessageBox.Show("Sửa thành công");

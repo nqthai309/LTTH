@@ -47,6 +47,7 @@ namespace AppQuanLy
         {
             if (CheckInfo() == 1)
             {
+                homestayNames.Remove(txtHomestayName.Text);
                 if (homestayNames.Contains(txtHomestayName.Text))
                 {
                     MessageBox.Show("Tên hotel bị trùng");

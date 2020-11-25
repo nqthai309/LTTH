@@ -60,5 +60,12 @@ namespace AppQuanLy
             FormBooking f = new FormBooking();
             AddForm(f);
         }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormDangNhap f = new FormDangNhap();
+            f.Show();
+        }
     }
 }

@@ -30,19 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dtHomestay = new System.Windows.Forms.DataGridView();
-            this.homestayBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.locationidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.homestaynameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imageurlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detailheaderimageurlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moreimformationimageurlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moreimformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sellpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.homestaybookingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -59,9 +46,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxLocation = new System.Windows.Forms.ComboBox();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.locationidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.homestaynameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageurlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detailheaderimageurlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moreimformationimageurlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moreimformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.homestaybookingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.homestayBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtHomestay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.homestayBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.homestayBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dtHomestay
@@ -69,7 +69,6 @@
             this.dtHomestay.AllowUserToAddRows = false;
             this.dtHomestay.AllowUserToDeleteRows = false;
             this.dtHomestay.AutoGenerateColumns = false;
-            this.dtHomestay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtHomestay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtHomestay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -94,94 +93,6 @@
             this.dtHomestay.Size = new System.Drawing.Size(746, 203);
             this.dtHomestay.TabIndex = 2;
             this.dtHomestay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtHotel_CellClick);
-            // 
-            // homestayBindingSource
-            // 
-            this.homestayBindingSource.DataSource = typeof(AppQuanLy.Models.homestay);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // locationidDataGridViewTextBoxColumn
-            // 
-            this.locationidDataGridViewTextBoxColumn.DataPropertyName = "location_id";
-            this.locationidDataGridViewTextBoxColumn.HeaderText = "location_id";
-            this.locationidDataGridViewTextBoxColumn.Name = "locationidDataGridViewTextBoxColumn";
-            this.locationidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // homestaynameDataGridViewTextBoxColumn
-            // 
-            this.homestaynameDataGridViewTextBoxColumn.DataPropertyName = "homestay_name";
-            this.homestaynameDataGridViewTextBoxColumn.HeaderText = "homestay_name";
-            this.homestaynameDataGridViewTextBoxColumn.Name = "homestaynameDataGridViewTextBoxColumn";
-            this.homestaynameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // imageurlDataGridViewTextBoxColumn
-            // 
-            this.imageurlDataGridViewTextBoxColumn.DataPropertyName = "image_url";
-            this.imageurlDataGridViewTextBoxColumn.HeaderText = "image_url";
-            this.imageurlDataGridViewTextBoxColumn.Name = "imageurlDataGridViewTextBoxColumn";
-            this.imageurlDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // detailheaderimageurlDataGridViewTextBoxColumn
-            // 
-            this.detailheaderimageurlDataGridViewTextBoxColumn.DataPropertyName = "detail_header_image_url";
-            this.detailheaderimageurlDataGridViewTextBoxColumn.HeaderText = "detail_header_image_url";
-            this.detailheaderimageurlDataGridViewTextBoxColumn.Name = "detailheaderimageurlDataGridViewTextBoxColumn";
-            this.detailheaderimageurlDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // moreimformationimageurlDataGridViewTextBoxColumn
-            // 
-            this.moreimformationimageurlDataGridViewTextBoxColumn.DataPropertyName = "more_imformation_image_url";
-            this.moreimformationimageurlDataGridViewTextBoxColumn.HeaderText = "more_imformation_image_url";
-            this.moreimformationimageurlDataGridViewTextBoxColumn.Name = "moreimformationimageurlDataGridViewTextBoxColumn";
-            this.moreimformationimageurlDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // moreimformationDataGridViewTextBoxColumn
-            // 
-            this.moreimformationDataGridViewTextBoxColumn.DataPropertyName = "more_imformation";
-            this.moreimformationDataGridViewTextBoxColumn.HeaderText = "more_imformation";
-            this.moreimformationDataGridViewTextBoxColumn.Name = "moreimformationDataGridViewTextBoxColumn";
-            this.moreimformationDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sellpriceDataGridViewTextBoxColumn
-            // 
-            this.sellpriceDataGridViewTextBoxColumn.DataPropertyName = "sell_price";
-            this.sellpriceDataGridViewTextBoxColumn.HeaderText = "sell_price";
-            this.sellpriceDataGridViewTextBoxColumn.Name = "sellpriceDataGridViewTextBoxColumn";
-            this.sellpriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // homestaybookingDataGridViewTextBoxColumn
-            // 
-            this.homestaybookingDataGridViewTextBoxColumn.DataPropertyName = "homestay_booking";
-            this.homestaybookingDataGridViewTextBoxColumn.HeaderText = "homestay_booking";
-            this.homestaybookingDataGridViewTextBoxColumn.Name = "homestaybookingDataGridViewTextBoxColumn";
-            this.homestaybookingDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // locationDataGridViewTextBoxColumn
-            // 
-            this.locationDataGridViewTextBoxColumn.DataPropertyName = "location";
-            this.locationDataGridViewTextBoxColumn.HeaderText = "location";
-            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
-            this.locationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -347,6 +258,106 @@
             this.comboBoxLocation.Size = new System.Drawing.Size(256, 24);
             this.comboBoxLocation.TabIndex = 7;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // locationidDataGridViewTextBoxColumn
+            // 
+            this.locationidDataGridViewTextBoxColumn.DataPropertyName = "location_id";
+            this.locationidDataGridViewTextBoxColumn.HeaderText = "location_id";
+            this.locationidDataGridViewTextBoxColumn.Name = "locationidDataGridViewTextBoxColumn";
+            this.locationidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.locationidDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // homestaynameDataGridViewTextBoxColumn
+            // 
+            this.homestaynameDataGridViewTextBoxColumn.DataPropertyName = "homestay_name";
+            this.homestaynameDataGridViewTextBoxColumn.HeaderText = "homestay_name";
+            this.homestaynameDataGridViewTextBoxColumn.Name = "homestaynameDataGridViewTextBoxColumn";
+            this.homestaynameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.homestaynameDataGridViewTextBoxColumn.Width = 57;
+            // 
+            // imageurlDataGridViewTextBoxColumn
+            // 
+            this.imageurlDataGridViewTextBoxColumn.DataPropertyName = "image_url";
+            this.imageurlDataGridViewTextBoxColumn.HeaderText = "image_url";
+            this.imageurlDataGridViewTextBoxColumn.Name = "imageurlDataGridViewTextBoxColumn";
+            this.imageurlDataGridViewTextBoxColumn.ReadOnly = true;
+            this.imageurlDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // detailheaderimageurlDataGridViewTextBoxColumn
+            // 
+            this.detailheaderimageurlDataGridViewTextBoxColumn.DataPropertyName = "detail_header_image_url";
+            this.detailheaderimageurlDataGridViewTextBoxColumn.HeaderText = "detail_header_image_url";
+            this.detailheaderimageurlDataGridViewTextBoxColumn.Name = "detailheaderimageurlDataGridViewTextBoxColumn";
+            this.detailheaderimageurlDataGridViewTextBoxColumn.ReadOnly = true;
+            this.detailheaderimageurlDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // moreimformationimageurlDataGridViewTextBoxColumn
+            // 
+            this.moreimformationimageurlDataGridViewTextBoxColumn.DataPropertyName = "more_imformation_image_url";
+            this.moreimformationimageurlDataGridViewTextBoxColumn.HeaderText = "more_imformation_image_url";
+            this.moreimformationimageurlDataGridViewTextBoxColumn.Name = "moreimformationimageurlDataGridViewTextBoxColumn";
+            this.moreimformationimageurlDataGridViewTextBoxColumn.ReadOnly = true;
+            this.moreimformationimageurlDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn.Width = 57;
+            // 
+            // moreimformationDataGridViewTextBoxColumn
+            // 
+            this.moreimformationDataGridViewTextBoxColumn.DataPropertyName = "more_imformation";
+            this.moreimformationDataGridViewTextBoxColumn.HeaderText = "more_imformation";
+            this.moreimformationDataGridViewTextBoxColumn.Name = "moreimformationDataGridViewTextBoxColumn";
+            this.moreimformationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.moreimformationDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // sellpriceDataGridViewTextBoxColumn
+            // 
+            this.sellpriceDataGridViewTextBoxColumn.DataPropertyName = "sell_price";
+            this.sellpriceDataGridViewTextBoxColumn.HeaderText = "sell_price";
+            this.sellpriceDataGridViewTextBoxColumn.Name = "sellpriceDataGridViewTextBoxColumn";
+            this.sellpriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sellpriceDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // homestaybookingDataGridViewTextBoxColumn
+            // 
+            this.homestaybookingDataGridViewTextBoxColumn.DataPropertyName = "homestay_booking";
+            this.homestaybookingDataGridViewTextBoxColumn.HeaderText = "homestay_booking";
+            this.homestaybookingDataGridViewTextBoxColumn.Name = "homestaybookingDataGridViewTextBoxColumn";
+            this.homestaybookingDataGridViewTextBoxColumn.ReadOnly = true;
+            this.homestaybookingDataGridViewTextBoxColumn.Width = 57;
+            // 
+            // locationDataGridViewTextBoxColumn
+            // 
+            this.locationDataGridViewTextBoxColumn.DataPropertyName = "location";
+            this.locationDataGridViewTextBoxColumn.HeaderText = "location";
+            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
+            this.locationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.locationDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // homestayBindingSource
+            // 
+            this.homestayBindingSource.DataSource = typeof(AppQuanLy.Models.homestay);
+            // 
             // FormHomestay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,14 +366,14 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtHomestay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormHomestay";
             this.Text = "FormHomestay";
             this.Load += new System.EventHandler(this.FormHomestay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtHomestay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.homestayBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.homestayBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
