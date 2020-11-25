@@ -40,7 +40,7 @@ namespace CNW_N8_MVC.Controllers
             var result = JsonConvert.DeserializeObject<user>(client.FrontEndLogin(acc.username,acc.password));
             if (result != null)
             {
-                    Session["Login"] = acc;
+                    Session["Login"] = result;
                     idAccount = result.id;
                     userName = result.username.ToString();
                     ViewData["username"] = result.username.ToString();
@@ -125,7 +125,9 @@ namespace CNW_N8_MVC.Controllers
             else
             {
                 var acc = JsonConvert.DeserializeObject<user>(client.FrontEndFindUserById(idAccount));
+                //var acc = Session["Login"];
                 ViewData["username"] = userName;
+                //Session["Login"] = acc;
                 ViewData["acc"] = acc;
                 return View();
             }
@@ -161,6 +163,8 @@ namespace CNW_N8_MVC.Controllers
             obj.address = acc.address;
             string json = JsonConvert.SerializeObject(obj);
             client.FrontEndUpdateUserInfo(idAccount, json);
+            idAccount += 1;
+            //Session["Login"] = obj;
             return RedirectToAction("Index", "Home");
         }
 

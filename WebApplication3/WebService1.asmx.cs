@@ -461,7 +461,7 @@ namespace WebApplication3
         [WebMethod]
         public string FEFindHomestayByPriceMedium(int? page, string txtSearch, string locationSelected)
         {
-            var result = context.homestays.OrderByDescending(h => h.id).Where(h => (h.location.location_name.ToLower() == locationSelected.ToLower() && (h.sell_price >= 300000 && h.sell_price < 500000) && h.homestay_name.ToLower().Contains(txtSearch.ToLower()))).ToPagedList(page?? 1 , 9);
+            var result = context.homestays.OrderByDescending(h => h.id).Where(h => (h.location.location_name == locationSelected && (h.sell_price >= 300000 && h.sell_price < 500000) && h.homestay_name.Contains(txtSearch))).ToPagedList(page?? 1 , 9);
             string json = JsonConvert.SerializeObject(result, Formatting.Indented, new JsonSerializerSettings
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
@@ -471,7 +471,7 @@ namespace WebApplication3
         [WebMethod]
         public string FEFindHomestayByPriceHigh(int? page, string txtSearch, string locationSelected)
         {
-            var result = context.homestays.OrderByDescending(h => h.id).Where(h => (h.location.location_name.ToLower() == locationSelected.ToLower() && (h.sell_price >= 500000) && h.homestay_name.ToLower().Contains(txtSearch.ToLower()))).ToPagedList(page?? 1 , 9);
+            var result = context.homestays.OrderByDescending(h => h.id).Where(h => (h.location.location_name.ToLower() == locationSelected && (h.sell_price >= 500000) && h.homestay_name.Contains(txtSearch))).ToPagedList(page?? 1 , 9);
             string json = JsonConvert.SerializeObject(result, Formatting.Indented, new JsonSerializerSettings
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
@@ -482,7 +482,7 @@ namespace WebApplication3
         [WebMethod]
         public string FEFindHomestayByPriceLow(int? page, string txtSearch, string locationSelected)
         {
-            var result = context.homestays.OrderByDescending(h => h.id).Where(h => (h.location.location_name.ToLower() == locationSelected.ToLower() && (h.sell_price < 300000) && h.homestay_name.ToLower().Contains(txtSearch.ToLower()))).ToPagedList(page?? 1, 9);
+            var result = context.homestays.OrderByDescending(h => h.id).Where(h => (h.location.location_name == locationSelected && (h.sell_price < 300000) && h.homestay_name.Contains(txtSearch))).ToPagedList(page?? 1, 9);
             string json = JsonConvert.SerializeObject(result, Formatting.Indented, new JsonSerializerSettings
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
