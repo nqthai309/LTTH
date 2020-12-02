@@ -56,7 +56,7 @@ namespace WebApplication3
 
             foreach (var it in hotel_bookings)
             {
-                hotel_booking htb = new hotel_booking(acc.id, acc.full_name, acc.email, acc.phone, acc.address, it.hotel_id, it.from_date, it.to_date, it.total_price);
+                hotel_booking htb = new hotel_booking(acc.id, acc.full_name, acc.email, acc.phone, acc.address, it.hotel_id, it.from_date, it.to_date, it.total_price, it.selectDichVu, it.thanhTienDichVu, "Đang xử lý");
                 context.hotel_booking.Add(htb);
                 context.SaveChanges();
                 context.hotel_booking.Remove(it);
@@ -64,36 +64,12 @@ namespace WebApplication3
             }
             foreach (var it in homestay_bookings)
             {
-                homestay_booking hsb = new homestay_booking(acc.id, acc.full_name, acc.email, acc.phone, acc.address, it.homestay_id, it.from_date, it.to_date, it.total_price);
+                homestay_booking hsb = new homestay_booking(acc.id, acc.full_name, acc.email, acc.phone, acc.address, it.homestay_id, it.from_date, it.to_date, it.total_price, it.selectDichVu, it.thanhTienDichVu, "Đang xử lý");
                 context.homestay_booking.Add(hsb);
                 context.SaveChanges();
                 context.homestay_booking.Remove(it);
                 context.SaveChanges();
             }
-
-            //foreach (var it in hotel_bookings1)
-            //{
-            //    it.user_id = acc.id;
-            //    it.customer_name = acc.full_name;
-            //    it.customer_email = acc.email;
-            //    it.customer_phone = acc.phone;
-            //    it.customer_address = acc.address;
-                
-            //    //context.hotel_booking.Remove(context.hotel_booking.Find(it.id));
-            //    context.hotel_booking.Add(it);
-            //    context.SaveChanges();
-            //}
-            //foreach (var it in homestay_bookings1)
-            //{
-            //    it.user_id = acc.id;
-            //    it.customer_name = acc.full_name;
-            //    it.customer_email = acc.email;
-            //    it.customer_phone = acc.phone;
-            //    it.customer_address = acc.address;
-            //    //context.homestay_booking.Remove(context.homestay_booking.Find(it.id));
-            //    context.homestay_booking.Add(it);
-            //    context.SaveChanges();
-            //}
             context.users.Remove(context.users.Find(id_old));
             context.SaveChanges();
         }
@@ -109,6 +85,17 @@ namespace WebApplication3
         [WebMethod]
         public void DeleteUser_BE(int id)
         {
+            var listHotelBooking = context.hotel_booking.Where(x => x.user_id == id).ToList();
+            var listHomestayBooking = context.homestay_booking.Where(x => x.user_id == id).ToList();
+            foreach(var it in listHotelBooking)
+            {
+                context.hotel_booking.Remove(it);
+            }
+            foreach(var it in listHomestayBooking)
+            {
+                context.homestay_booking.Remove(it);
+            }
+
             var result = context.users.Find(id);
             context.users.Remove(result);
             context.SaveChanges();
@@ -137,19 +124,31 @@ namespace WebApplication3
         public void EditHotel_BE(int id_old, string json)
         {
             var row_bookings = context.hotel_booking.Where(x => x.hotel_id == id_old).ToList();
-            var newRows = row_bookings;
+            var row_DichVu_HS_HT = context.DichVu_HT_HS.Where(x => x.idHTHS == id_old).ToList();
+            var newRows_Booking = row_bookings;
+            var newRows_DichVu_HS_HT = row_DichVu_HS_HT;
             foreach (var item in row_bookings)
             {
                 context.hotel_booking.Remove(item);
+                
+            }
+            foreach(var item in row_DichVu_HS_HT)
+            {
+                context.DichVu_HT_HS.Remove(item);
             }
             context.hotels.Remove(context.hotels.Find(id_old));
             var hotel = JsonConvert.DeserializeObject<hotel>(json);
             context.hotels.Add(hotel);
             context.SaveChanges();
-            foreach (var item in newRows)
+            foreach (var item in newRows_Booking)
             {
                 item.hotel_id = hotel.id;
                 context.hotel_booking.Add(item);
+            }
+            foreach(var item in newRows_DichVu_HS_HT)
+            {
+                item.idHTHS = hotel.id;
+                context.DichVu_HT_HS.Add(item);
             }
             context.SaveChanges();
         }
@@ -158,6 +157,11 @@ namespace WebApplication3
         public void DeleteHotel_BE(int id)
         {
             var listBooking = context.hotel_booking.Where(x => x.hotel_id == id).ToList();
+            var listDichVu = context.DichVu_HT_HS.Where(x => x.idHTHS == id).ToList();
+            foreach(var it in listDichVu)
+            {
+                context.DichVu_HT_HS.Remove(it);
+            }
             foreach (var item in listBooking)
             {
                 context.hotel_booking.Remove(item);
@@ -190,7 +194,13 @@ namespace WebApplication3
         public void EditHomestay_BE(int id_old, string json)
         {
             var row_bookings = context.homestay_booking.Where(x => x.homestay_id == id_old).ToList();
+            var row_DichVu_HS_HT = context.DichVu_HT_HS.Where(x => x.idHTHS == id_old).ToList();
+            var newRows_DichVu = row_DichVu_HS_HT;
             var newRows = row_bookings;
+            foreach(var item in row_DichVu_HS_HT)
+            {
+                context.DichVu_HT_HS.Remove(item);
+            }
             foreach (var item in row_bookings)
             {
                 context.homestay_booking.Remove(item);
@@ -199,6 +209,11 @@ namespace WebApplication3
             var homeStay = JsonConvert.DeserializeObject<homestay>(json);
             context.homestays.Add(homeStay);
             context.SaveChanges();
+            foreach(var it in newRows_DichVu)
+            {
+                it.idHTHS = homeStay.id;
+                context.DichVu_HT_HS.Add(it);
+            }
             foreach (var item in newRows)
             {
                 item.homestay_id = homeStay.id;
@@ -211,6 +226,11 @@ namespace WebApplication3
         public void DeleteHomestay_BE(int id)
         {
             var listBooking = context.homestay_booking.Where(x => x.homestay_id == id).ToList();
+            var listDichVu = context.DichVu_HT_HS.Where(x => x.idHTHS == id).ToList();
+            foreach(var item in listDichVu)
+            {
+                context.DichVu_HT_HS.Remove(item);
+            }
             foreach (var item in listBooking)
             {
                 context.homestay_booking.Remove(item);
@@ -248,6 +268,65 @@ namespace WebApplication3
             }
             return "";
         }
+        [WebMethod]
+        public string GetListBookingOptional_BE(string key, string status_check)
+        {
+            try
+            {
+                if (key == "hotel_bookings" && status_check == "Đang Xử Lý")
+                {
+                    var json = JsonConvert.SerializeObject(context.hotel_booking.Where(x => x.id != 0 && x.status_check == "Đang Xử Lý").ToList(), Formatting.Indented, new JsonSerializerSettings
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    });
+                    return json;
+                }
+                else if(key == "hotel_bookings" && status_check == "Xác Nhận")
+                {
+                    var json = JsonConvert.SerializeObject(context.hotel_booking.Where(x => x.id != 0 && x.status_check == "Xác Nhận").ToList(), Formatting.Indented, new JsonSerializerSettings
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    });
+                    return json;
+                }
+                else if (key == "homestay_bookings" && status_check == "Đang Xử Lý")
+                {
+                    var json = JsonConvert.SerializeObject(context.homestay_booking.Where(x => x.id != 0 && x.status_check == "Đang Xử Lý").ToList(), Formatting.Indented, new JsonSerializerSettings
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    });
+                    return json;
+                }
+                else if(key == "homestay_bookings" && status_check == "Xác Nhận")
+                {
+                    var json = JsonConvert.SerializeObject(context.homestay_booking.Where(x => x.id != 0 && x.status_check == "Xác Nhận").ToList(), Formatting.Indented, new JsonSerializerSettings
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    });
+                    return json;
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return "";
+        }
+        [WebMethod]
+        public void ConfirmHotelBooking(int id)
+        {
+            var result = context.hotel_booking.Where(x => x.id == id).SingleOrDefault();
+            result.status_check = "Xác Nhận";
+            context.SaveChanges();
+        }
+        [WebMethod]
+        public void ConfirmHomestayBooking(int id)
+        {
+            var result = context.homestay_booking.Where(x => x.id == id).SingleOrDefault();
+            result.status_check = "Xác Nhận";
+            context.SaveChanges();
+        }
+
         //------------------------THAI----------------------------------
         //------------------------TUNG----------------------------------
         //user/home
@@ -425,6 +504,17 @@ namespace WebApplication3
             });
             return json;
         }
+        [WebMethod]
+        public string FrontEndGetDichVuHotel(int? id)
+        {
+
+            var model = context.DichVu_HT_HS.Where(x => x.theLoai == "hotel" && x.idHTHS == id).ToList();
+            string json = JsonConvert.SerializeObject(model, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
 
         [WebMethod]
         public string FrontEndAddItemHotel(int id)
@@ -552,6 +642,17 @@ namespace WebApplication3
         public string FEGetDetailHomestay(int? id)
         {
             var model = context.homestays.Where(x => x.id == id).FirstOrDefault();
+            string json = JsonConvert.SerializeObject(model, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+        [WebMethod]
+        public string FrontEndGetDichVuHomestay(int? id)
+        {
+
+            var model = context.DichVu_HT_HS.Where(x => x.theLoai == "homestay" && x.idHTHS == id).ToList();
             string json = JsonConvert.SerializeObject(model, Formatting.Indented, new JsonSerializerSettings
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore

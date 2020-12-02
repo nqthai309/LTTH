@@ -34,6 +34,14 @@ namespace AppQuanLy.Models
 
         public int? total_price { get; set; }
 
+        [StringLength(250)]
+        public string selectDichVu { get; set; }
+
+        public int? thanhTienDichVu { get; set; }
+
+        [StringLength(250)]
+        public string status_check { get; set; }
+
         public virtual homestay homestay { get; set; }
     }
 }

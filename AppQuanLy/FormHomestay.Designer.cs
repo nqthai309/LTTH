@@ -46,6 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxLocation = new System.Windows.Forms.ComboBox();
+            this.homestayBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.locationidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.homestaynameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,9 +57,6 @@
             this.moreimformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sellpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.homestaybookingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.homestayBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtHomestay)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homestayBindingSource)).BeginInit();
@@ -80,9 +78,7 @@
             this.descriptionDataGridViewTextBoxColumn,
             this.moreimformationDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn,
-            this.sellpriceDataGridViewTextBoxColumn,
-            this.homestaybookingDataGridViewTextBoxColumn,
-            this.locationDataGridViewTextBoxColumn});
+            this.sellpriceDataGridViewTextBoxColumn});
             this.dtHomestay.DataSource = this.homestayBindingSource;
             this.dtHomestay.Location = new System.Drawing.Point(11, 11);
             this.dtHomestay.Margin = new System.Windows.Forms.Padding(2);
@@ -258,6 +254,10 @@
             this.comboBoxLocation.Size = new System.Drawing.Size(256, 24);
             this.comboBoxLocation.TabIndex = 7;
             // 
+            // homestayBindingSource
+            // 
+            this.homestayBindingSource.DataSource = typeof(AppQuanLy.Models.homestay);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -338,26 +338,6 @@
             this.sellpriceDataGridViewTextBoxColumn.ReadOnly = true;
             this.sellpriceDataGridViewTextBoxColumn.Width = 58;
             // 
-            // homestaybookingDataGridViewTextBoxColumn
-            // 
-            this.homestaybookingDataGridViewTextBoxColumn.DataPropertyName = "homestay_booking";
-            this.homestaybookingDataGridViewTextBoxColumn.HeaderText = "homestay_booking";
-            this.homestaybookingDataGridViewTextBoxColumn.Name = "homestaybookingDataGridViewTextBoxColumn";
-            this.homestaybookingDataGridViewTextBoxColumn.ReadOnly = true;
-            this.homestaybookingDataGridViewTextBoxColumn.Width = 57;
-            // 
-            // locationDataGridViewTextBoxColumn
-            // 
-            this.locationDataGridViewTextBoxColumn.DataPropertyName = "location";
-            this.locationDataGridViewTextBoxColumn.HeaderText = "location";
-            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
-            this.locationDataGridViewTextBoxColumn.ReadOnly = true;
-            this.locationDataGridViewTextBoxColumn.Width = 58;
-            // 
-            // homestayBindingSource
-            // 
-            this.homestayBindingSource.DataSource = typeof(AppQuanLy.Models.homestay);
-            // 
             // FormHomestay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -381,18 +361,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtHomestay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn locationidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn homestaynameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn imageurlDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detailheaderimageurlDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moreimformationimageurlDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moreimformationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sellpriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn homestaybookingDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn locationDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource homestayBindingSource;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnXoa;
@@ -410,5 +378,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxLocation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn locationidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn homestaynameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imageurlDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detailheaderimageurlDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moreimformationimageurlDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moreimformationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sellpriceDataGridViewTextBoxColumn;
     }
 }

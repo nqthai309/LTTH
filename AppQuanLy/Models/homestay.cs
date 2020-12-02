@@ -47,7 +47,7 @@ namespace AppQuanLy.Models
 
         public virtual location location { get; set; }
 
-        public homestay(int location_id, string homestay_name, string image_url, string detail_header_image_url, string more_imformation_image_url, string description, string more_imformation, int price, int sell_price)
+        public homestay(int? location_id, string homestay_name, string image_url, string detail_header_image_url, string more_imformation_image_url, string description, string more_imformation, int? price, int? sell_price)
         {
             this.location_id = location_id;
             this.homestay_name = homestay_name;

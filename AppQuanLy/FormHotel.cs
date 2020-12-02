@@ -92,7 +92,7 @@ namespace AppQuanLy
                 }
                 else
                 {
-                    hotel hotels = new hotel(int.Parse(comboBoxLocation.Text), txtHotelName.Text, txtInfo.Text,"/Content/img/Group 70.png", "/Content/img/hotel-detail.jpg", "/Content/img/Group 69.png", txtDes.Text,
+                    hotel hotels = new hotel(int.Parse(comboBoxLocation.Text), txtHotelName.Text, "/Content/img/Group 70.png", "/Content/img/hotel-detail.jpg", "/Content/img/Group 68.png", txtDes.Text, txtInfo.Text,
                         int.Parse(txtPrice.Text), int.Parse(txtSellPrice.Text));
                     client.AddHotel_BE(JsonConvert.SerializeObject(hotels));
                     MessageBox.Show("Thêm thành công");

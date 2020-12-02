@@ -21,20 +21,25 @@
                                 <th>Email khách hàng</th>
                                 <th>Từ ngày</th>
                                 <th>Đến ngày</th>
+                                <th>TT D.Vụ</th>
                                 <th>Tổng tiền</th>
+                                <th>Trạng Thái</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (hotel_booking it in Model.hotel_bookings)
                             {
-                                <tr>
-                                    <td>@it.hotel.hotel_name </td>
-                                    <td>@it.customer_name</td>
-                                    <td>@it.customer_email</td>
-                                    <td>@it.from_date</td>
-                                    <td>@it.to_date</td>
-                                    <td>@it.total_price</td>
-                                </tr>
+                            <tr>
+                                <td>@it.hotel.hotel_name </td>
+                                <td>@it.customer_name</td>
+                                <td>@it.customer_email</td>
+                                <td>@it.from_date</td>
+                                <td>@it.to_date</td>
+                                <td>@it.thanhTienDichVu</td>
+                                <td>@it.total_price</td>
+                                <td>@it.status_check</td>
+                                <td><a href="#"  >X.Nhận</a></td>
+                            </tr>
                             }
                         </tbody>
                     </table>
@@ -54,20 +59,25 @@
                                 <th>Email khách hàng</th>
                                 <th>Từ ngày</th>
                                 <th>Đến ngày</th>
+                                <th>TT D.Vụ</th>
                                 <th>Tổng tiền</th>
+                                <th>Trạng Thái</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (homestay_booking it in Model.homestay_bookings)
                             {
-                                <tr>
-                                    <td>@it.homestay.homestay_name </td>
-                                    <td>@it.customer_name</td>
-                                    <td>@it.customer_email</td>
-                                    <td>@it.from_date</td>
-                                    <td>@it.to_date</td>
-                                    <td>@it.total_price</td>
-                                </tr>
+                            <tr>
+                                <td>@it.homestay.homestay_name </td>
+                                <td>@it.customer_name</td>
+                                <td>@it.customer_email</td>
+                                <td>@it.from_date</td>
+                                <td>@it.to_date</td>
+                                <td>@it.thanhTienDichVu</td>
+                                <td>@it.total_price</td>
+                                <td>@it.status_check</td>
+                                <td><a href="#">X.Nhận</a></td>
+                            </tr>
                             }
                         </tbody>
                     </table>

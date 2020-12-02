@@ -34,9 +34,17 @@ namespace WebApplication3.Models
 
         public int? total_price { get; set; }
 
+        [StringLength(250)]
+        public string selectDichVu { get; set; }
+
+        public int? thanhTienDichVu { get; set; }
+
+        [StringLength(250)]
+        public string status_check { get; set; }
+
         public virtual hotel hotel { get; set; }
 
-        public hotel_booking(int? user_id, string customer_name, string customer_email, string customer_phone, string customer_address, int? hotel_id, DateTime? from_date, DateTime? to_date, int? total_price)
+        public hotel_booking(int? user_id, string customer_name, string customer_email, string customer_phone, string customer_address, int? hotel_id, DateTime? from_date, DateTime? to_date, int? total_price, string selectDichVu, int? thanhTienDichVu, string status_check)
         {
             this.user_id = user_id;
             this.customer_name = customer_name;
@@ -47,6 +55,9 @@ namespace WebApplication3.Models
             this.from_date = from_date;
             this.to_date = to_date;
             this.total_price = total_price;
+            this.selectDichVu = selectDichVu;
+            this.thanhTienDichVu = thanhTienDichVu;
+            this.status_check = status_check;
         }
 
         public hotel_booking()

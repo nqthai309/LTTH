@@ -47,7 +47,7 @@ namespace AppQuanLy.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<hotel_booking> hotel_booking { get; set; }
 
-        public hotel(int location_id, string hotel_name, string image_url, string detail_header_image_url, string more_imformation_image_url, string description, string more_imformation, int price, int sell_price)
+        public hotel(int? location_id, string hotel_name, string image_url, string detail_header_image_url, string more_imformation_image_url, string description, string more_imformation, int? price, int? sell_price)
         {
             this.location_id = location_id;
             this.hotel_name = hotel_name;

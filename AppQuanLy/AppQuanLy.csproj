@@ -100,13 +100,14 @@
     <Compile Include="FormUser.Designer.cs">
       <DependentUpon>FormUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\DichVu.cs" />
+    <Compile Include="Models\DichVu_HT_HS.cs" />
     <Compile Include="Models\homestay.cs" />
     <Compile Include="Models\homestay_booking.cs" />
     <Compile Include="Models\hotel.cs" />
     <Compile Include="Models\hotel_booking.cs" />
     <Compile Include="Models\location.cs" />
     <Compile Include="Models\Model1.cs" />
-    <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Models\user.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -258,6 +259,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndUpdateUserInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.GetListBookingOptional_BEResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.GetListBooking_BEResponse.datasource">

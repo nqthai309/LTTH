@@ -51,6 +51,12 @@
                                             <p class=" semi-bold">Số Đêm</p>
                                         </div>
                                         <div class="col text-center">
+                                            <p class=" semi-bold">D.Vụ</p>
+                                        </div>
+                                        <div class="col text-center">
+                                            <p class=" semi-bold">TT D.Vụ</p>
+                                        </div>
+                                        <div class="col text-center">
                                             <p style="margin-right:55px" class=" semi-bold">Thành Tiền</p>
                                         </div>
                                         <div class="clear-fix"></div>
@@ -63,23 +69,27 @@
                                             {
                                                 if (it.Product.Status_checking == "hotel")
                                                 {
-                                                    <div class="row pt-3 pb-3 panel-row panel-border-grey" id="row_@it.Product.Id+@it.Product.Name">
-                                                        <div class="col">@it.Product.Name</div>
-                                                        <div class="col text-center">@it.Quantity</div>
-                                                        <div class="col text-center">@((it.Quantity * int.Parse(it.Product.Sell_price.ToString())).ToString()) VNĐ</div>
-                                                        <a style="margin-right:5px; color:red;" href="@Url.Action("RemoveLine","User",new { @id = it.Product.Id, @checkin = it.Product.Checkin , @status_checking = "hotel"})">Xoá</a>
-                                                        <div class="clear-fix"></div>
-                                                    </div>
+                                            <div class="row pt-3 pb-3 panel-row panel-border-grey" id="row_@it.Product.Id+@it.Product.Name">
+                                                <div class="col">@it.Product.Name</div>
+                                                <div class="col">@it.Quantity</div>
+                                                <div class="col">@it.SelectDichVu</div>
+                                                <div class="col">@it.ThanhTienDichVu</div>
+                                                <div class="col">@((it.Quantity * int.Parse(it.Product.Sell_price.ToString())+it.ThanhTienDichVu).ToString()) VNĐ</div>
+                                                <a style="margin-right:5px; color:red;" href="@Url.Action("RemoveLine","User",new { @id = it.Product.Id, @checkin = it.Product.Checkin , @status_checking = "hotel"})">Xoá</a>
+                                                <div class="clear-fix"></div>
+                                            </div>
                                                 }
                                                 if (it.Product.Status_checking == "homestay")
                                                 {
-                                                    <div class="row pt-3 pb-3 panel-row panel-border-grey" id="row_@it.Product.Id+@it.Product.Name">
-                                                        <div class="col">@it.Product.Name</div>
-                                                        <div class="col text-center">@it.Quantity</div>
-                                                        <div class="col text-center">@((it.Quantity * int.Parse(it.Product.Sell_price.ToString())).ToString()) VNĐ</div>
-                                                        <a style="margin-right:5px; color:red;" href="@Url.Action("RemoveLine","User", new {@id = it.Product.Id, @checkin = it.Product.Checkin , @status_checking = "homestay"})">Xoá</a>
-                                                        <div class="clear-fix"></div>
-                                                    </div>
+                                        <div class="row pt-3 pb-3 panel-row panel-border-grey" id="row_@it.Product.Id+@it.Product.Name">
+                                            <div class="col">@it.Product.Name</div>
+                                            <div class="col text-center">@it.Quantity</div>
+                                            <div class="col text-center">@it.SelectDichVu</div>
+                                            <div class="col">@it.ThanhTienDichVu</div>
+                                            <div class="col text-center">@((it.Quantity * int.Parse(it.Product.Sell_price.ToString()) + it.ThanhTienDichVu).ToString()) VNĐ</div>
+                                            <a style="margin-right:5px; color:red;" href="@Url.Action("RemoveLine","User", new {@id = it.Product.Id, @checkin = it.Product.Checkin , @status_checking = "homestay"})">Xoá</a>
+                                            <div class="clear-fix"></div>
+                                        </div>
                                                 }
                                                 @*@Ajax.ActionLink("Xoa AJ", "DeleteItem", new { @id = it.Product.Id, @status_check =it.Product.Status_checking}, new AjaxOptions
                                            {

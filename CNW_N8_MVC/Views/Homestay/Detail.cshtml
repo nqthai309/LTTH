@@ -75,28 +75,27 @@
                                         <div style="color:red; font-size:20px; margin-left:10px" id="divThongBao"></div>
                                     </div>
                                 </div>
-                                <hr class="mt-3 mb-3">
-                                @*<div class="row">
-                                        <div class="col-sm-6">
-                                            <label class="fs14 mr-3">Họ và tên :</label>
-                                            <input type="hovaten" class="form-control input-detail sc-text" placeholder="Họ và tên">
+                                <p class="text-light-grey mb-3">Chọn các gói dịch vụ đính kèm tour</p>
+                                @foreach (var it in Model.dichVu)
+                                {
+                                    <div class="form-inline">
+
+                                        <p class="fs14 text-left mr-3">@it.tenDichVu</p>
+
+                                        <input name="@it.idDichVu" type="radio" value="1" />Yes
+                                        <input name="@it.idDichVu" type="radio" value="0" checked="checked" />No
+                                        <div class="package-price-box col-sm-5">
+                                            <div class="package-price-detail">
+                                                <p class="package-price-total"><span class="j-totalPrice">@it.donGiaDichVu vnđ</span></p>
+                                                <div class="act_result__cost_detail act_result__cost_detail--inline j-cost_detail">
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-sm-6">
-                                            <label class="fs14 mr-3">SĐT :</label>
-                                            <input type="sdt" class="form-control input-detail sc-text">
-                                        </div>
+
+
+
                                     </div>
-                                    <div class="row mt-2">
-                                        <div class="col-sm-6">
-                                            <label class="fs14 mr-3">Email :</label>
-                                            <input type="email" class="form-control input-detail sc-text" placeholder="demo@gmail.com">
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <label class="fs14 mr-3">Địa chỉ :</label>
-                                            <input type="diachi" class="form-control input-detail sc-text">
-                                        </div>
-                                    </div>*@
-                                <hr class="mt-3 mb-3">
+                                }
                                 <div class="package-payment-info">
                                     <p class="text-light-grey mb-3">Đơn Giá : </p>
                                     <div class="package-price-wrapper">

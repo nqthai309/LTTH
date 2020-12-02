@@ -156,6 +156,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\DichVu.cs" />
+    <Compile Include="Models\DichVu_HT_HS.cs" />
     <Compile Include="Models\homestay.cs" />
     <Compile Include="Models\homestay_booking.cs" />
     <Compile Include="Models\hotel.cs" />
@@ -182,9 +184,6 @@
     <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.GetListUser_BEResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.HelloWorldResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.EditHotel_BEResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -198,6 +197,120 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.GetListBooking_BEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.DangNhapAppWinFormResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FEAddItem1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FEAddItemHomestayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FEFindHomestayByPriceHighResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FEFindHomestayByPriceLowResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FEFindHomestayByPriceMediumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FEGetDetailHomestay0Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FEGetDetailHomestayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FEGetListHomestaysResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FEMaxPriceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FEMinPriceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FEOpitionListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndAddHomestayBookingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndAddHotelBookingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndAddItemHotelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndChangePasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndFindHomestayByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndFindHotelByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndFindUserByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndFindUserByUsernameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndGetDetialHotelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndGetDetialHotelsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndGetListHomestayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndGetListHotelsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndGetListLocationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndMaxPriceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndMinPriceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndOpitionListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndRegisterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndSearchEngine_Price1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndSearchEngine_Price2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndSearchEngine_Price3Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndUpdateUserInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.GetListBookingOptional_BEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndGetDichVuHomestayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CNW_N8_MVC.ServiceReference1.FrontEndGetDichVuHotelResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServiceReference1\WebService1.disco" />

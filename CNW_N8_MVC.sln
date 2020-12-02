@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNW_N8_MVC", "CNW_N8_MVC\CN
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication3", "WebApplication3\WebApplication3.csproj", "{2ABDF095-47DC-4AF1-BDBD-385820EAD157}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppQuanLy", "AppQuanLy\AppQuanLy.csproj", "{8B6FAA36-1E72-426D-9E57-690EC1C74CCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{2ABDF095-47DC-4AF1-BDBD-385820EAD157}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ABDF095-47DC-4AF1-BDBD-385820EAD157}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ABDF095-47DC-4AF1-BDBD-385820EAD157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B6FAA36-1E72-426D-9E57-690EC1C74CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B6FAA36-1E72-426D-9E57-690EC1C74CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B6FAA36-1E72-426D-9E57-690EC1C74CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B6FAA36-1E72-426D-9E57-690EC1C74CCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

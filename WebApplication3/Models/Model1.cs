@@ -8,10 +8,12 @@ namespace WebApplication3.Models
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=Model1")
+            : base("name=Model12")
         {
         }
 
+        public virtual DbSet<DichVu> DichVus { get; set; }
+        public virtual DbSet<DichVu_HT_HS> DichVu_HT_HS { get; set; }
         public virtual DbSet<homestay> homestays { get; set; }
         public virtual DbSet<homestay_booking> homestay_booking { get; set; }
         public virtual DbSet<hotel> hotels { get; set; }
@@ -21,6 +23,23 @@ namespace WebApplication3.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<DichVu>()
+                .Property(e => e.idDichVu)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<DichVu>()
+                .HasMany(e => e.DichVu_HT_HS)
+                .WithRequired(e => e.DichVu)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<DichVu_HT_HS>()
+                .Property(e => e.theLoai)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<DichVu_HT_HS>()
+                .Property(e => e.idDichVu)
+                .IsUnicode(false);
+
             modelBuilder.Entity<homestay>()
                 .Property(e => e.description)
                 .IsUnicode(false);

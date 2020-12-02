@@ -74,7 +74,7 @@ namespace AppQuanLy
                 }
                 else
                 {
-                    homestay homestays = new homestay(int.Parse(comboBoxLocation.Text), txtHomestayName.Text, txtInfo.Text, "/Content/img/Group 70.png", "/Content/img/hotel-detail.jpg", "/Content/img/Group 69.png", txtDes.Text,
+                    homestay homestays = new homestay(int.Parse(comboBoxLocation.Text), txtHomestayName.Text,  "/Content/img/Group 70.png", "/Content/img/hotel-detail.jpg", "/Content/img/Group 69.png", txtDes.Text, txtInfo.Text,
                         int.Parse(txtPrice.Text), int.Parse(txtSellPrice.Text));
                     client.AddHomestay_BE(JsonConvert.SerializeObject(homestays));
                     MessageBox.Show("Thêm thành công");

@@ -117,6 +117,9 @@ namespace CNW_N8_MVC.Controllers
                 //model.hotels = context.hotels.Where(x => x.id != 0).ToList();
                 model.hotels = JsonConvert.DeserializeObject<List<hotel>>(client.FrontEndGetDetialHotels());
                 //model.hotel = context.hotels.Where(x => x.id == id).FirstOrDefault();
+
+                //model.dichVu = context.DichVu_HT_HS.Where(x => x.theLoai == "hotel" && x.idHTHS == id).ToList();
+                model.dichVu = JsonConvert.DeserializeObject<List<DichVu_HT_HS>>(client.FrontEndGetDichVuHotel(id));
                 ViewData["id"] = id.ToString();
                 return View(model);
 
@@ -136,6 +139,8 @@ namespace CNW_N8_MVC.Controllers
             }
             else
             {
+                //var x1 = Request["dvAnSang"];
+                
                 DateTime checkIn = Convert.ToDateTime(Request["check_in"]);
                 DateTime checkOut = Convert.ToDateTime(Request["check_out"]);
                 if (checkOut <= checkIn)
@@ -148,18 +153,28 @@ namespace CNW_N8_MVC.Controllers
                     TimeSpan t = checkOut - checkIn;
                     quantity = (int)t.TotalDays;
                 }
-
+                string selectDichVu = "";
+                int thanhTienDichVu = 0;
                 //var hotel = context.hotels.Find(id);
                 var hotel = JsonConvert.DeserializeObject<hotel>(client.FrontEndAddItemHotel(id));
+                var dichVu = JsonConvert.DeserializeObject<List<DichVu_HT_HS>>(client.FrontEndGetDichVuHotel(id));
+                foreach (var it in dichVu)
+                {
+                    if(Request[it.idDichVu] == "1")
+                    {
+                        selectDichVu += it.tenDichVu + ',';
+                        thanhTienDichVu += (int)it.donGiaDichVu;
+                    }
+                }
                 var cart = (Cart)Session["CartSession"];
                 if (cart != null)
                 {
-                    cart.AddItemHotel(hotel, checkIn.ToShortDateString(), checkOut.ToShortDateString(), quantity);
+                    cart.AddItemHotel(hotel, checkIn.ToShortDateString(), checkOut.ToShortDateString(), quantity, selectDichVu, thanhTienDichVu); ;
                 }
                 else
                 {
                     cart = new Cart();
-                    cart.AddItemHotel(hotel, checkIn.ToShortDateString(), checkOut.ToShortDateString(), quantity);
+                    cart.AddItemHotel(hotel, checkIn.ToShortDateString(), checkOut.ToShortDateString(), quantity, selectDichVu, thanhTienDichVu);
                     Session["CartSession"] = cart;
                 }
 

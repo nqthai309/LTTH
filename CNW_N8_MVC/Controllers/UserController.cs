@@ -280,6 +280,11 @@ namespace CNW_N8_MVC.Controllers
                         ht_booking.hotel_id = int.Parse(it.Product.Id);
                         ht_booking.from_date = checkin;
                         ht_booking.to_date = checkout;
+
+                        
+                        ht_booking.selectDichVu = it.SelectDichVu;
+                        ht_booking.thanhTienDichVu = it.ThanhTienDichVu;
+                        ht_booking.status_check = "Đang Xử Lý";
                         ht_booking.total_price = ((int)t.TotalDays * int.Parse(it.Product.Sell_price));
                         client.FrontEndAddHotelBooking(JsonConvert.SerializeObject(ht_booking));
 
@@ -302,6 +307,11 @@ namespace CNW_N8_MVC.Controllers
                         hstay_booking.homestay_id = int.Parse(it.Product.Id);
                         hstay_booking.from_date = checkin;
                         hstay_booking.to_date = checkout;
+
+                        
+                        hstay_booking.selectDichVu = it.SelectDichVu;
+                        hstay_booking.thanhTienDichVu = it.ThanhTienDichVu;
+                        hstay_booking.status_check = "Đang Xử Lý";
                         hstay_booking.total_price = ((int)t.TotalDays * int.Parse(it.Product.Sell_price));
                         client.FrontEndAddHomestayBooking(JsonConvert.SerializeObject(hstay_booking));
 

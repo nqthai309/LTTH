@@ -108,6 +108,9 @@ namespace CNW_N8_MVC.Controllers
                 //model.homestays = context.homestays.Where(x => x.id != 0).ToList();
                 model.homestays = JsonConvert.DeserializeObject<List<homestay>>(client.FEGetDetailHomestay0());
                 //model.homestays = context.homestays.Where(x => x.id == id).FirstOrDefault();
+
+                //model.dichVu = context.DichVu_HT_HS.Where(x => x.theLoai == "homestay" && x.idHTHS == id).ToList();
+                model.dichVu = JsonConvert.DeserializeObject<List<DichVu_HT_HS>>(client.FrontEndGetDichVuHomestay(id));
                 ViewData["id"] = id.ToString();
                 return View(model);
 
@@ -141,17 +144,28 @@ namespace CNW_N8_MVC.Controllers
                     quantity = (int)t.TotalDays;
                 }
 
+                string selectDichVu = "";
+                int thanhTienDichVu = 0;
                 //var homestay = context.homestays.Find(id);
                 var homestay = JsonConvert.DeserializeObject<homestay>(client.FEAddItemHomestay(id));
+                var dichVu = JsonConvert.DeserializeObject<List<DichVu_HT_HS>>(client.FrontEndGetDichVuHomestay(id));
+                foreach (var it in dichVu)
+                {
+                    if (Request[it.idDichVu] == "1")
+                    {
+                        selectDichVu += it.tenDichVu + ',';
+                        thanhTienDichVu += (int)it.donGiaDichVu;
+                    }
+                }
                 var cart = (Cart)Session["CartSession"];
                 if (cart != null)
                 {
-                    cart.AddItemHomestay(homestay, checkOut.ToShortDateString(), checkOut.ToShortDateString(), quantity);
+                    cart.AddItemHomestay(homestay, checkOut.ToShortDateString(), checkOut.ToShortDateString(), quantity, selectDichVu, thanhTienDichVu) ;
                 }
                 else
                 {
                     cart = new Cart();
-                    cart.AddItemHomestay(homestay, checkIn.ToShortDateString(), checkOut.ToShortDateString(), quantity);
+                    cart.AddItemHomestay(homestay, checkIn.ToShortDateString(), checkOut.ToShortDateString(), quantity, selectDichVu, thanhTienDichVu);
                     Session["CartSession"] = cart;
                 }
                 return RedirectToAction("Booking", "User");
