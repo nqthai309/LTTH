@@ -67,5 +67,12 @@ namespace AppQuanLy
             FormDangNhap f = new FormDangNhap();
             f.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            groupBox3.Controls.Clear();
+            FormDichVu f = new FormDichVu();
+            AddForm(f);
+        }
     }
 }

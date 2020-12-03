@@ -34,6 +34,7 @@
             this.btnHotel = new System.Windows.Forms.Button();
             this.btnUser = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             this.txtAddress = new System.Windows.Forms.Label();
             this.txtFullName = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.Label();
@@ -41,13 +42,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnDangXuat = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnBooking);
             this.groupBox1.Controls.Add(this.btnHomestay);
             this.groupBox1.Controls.Add(this.btnHotel);
@@ -65,10 +67,10 @@
             // 
             this.btnBooking.BackColor = System.Drawing.Color.LightGray;
             this.btnBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBooking.Location = new System.Drawing.Point(7, 219);
+            this.btnBooking.Location = new System.Drawing.Point(8, 175);
             this.btnBooking.Margin = new System.Windows.Forms.Padding(2);
             this.btnBooking.Name = "btnBooking";
-            this.btnBooking.Size = new System.Drawing.Size(194, 63);
+            this.btnBooking.Size = new System.Drawing.Size(194, 44);
             this.btnBooking.TabIndex = 0;
             this.btnBooking.Text = "BOOKING";
             this.btnBooking.UseVisualStyleBackColor = false;
@@ -78,10 +80,10 @@
             // 
             this.btnHomestay.BackColor = System.Drawing.Color.LightGray;
             this.btnHomestay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHomestay.Location = new System.Drawing.Point(7, 152);
+            this.btnHomestay.Location = new System.Drawing.Point(8, 119);
             this.btnHomestay.Margin = new System.Windows.Forms.Padding(2);
             this.btnHomestay.Name = "btnHomestay";
-            this.btnHomestay.Size = new System.Drawing.Size(194, 63);
+            this.btnHomestay.Size = new System.Drawing.Size(194, 52);
             this.btnHomestay.TabIndex = 0;
             this.btnHomestay.Text = "HOMESTAY";
             this.btnHomestay.UseVisualStyleBackColor = false;
@@ -91,10 +93,10 @@
             // 
             this.btnHotel.BackColor = System.Drawing.Color.LightGray;
             this.btnHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHotel.Location = new System.Drawing.Point(7, 84);
+            this.btnHotel.Location = new System.Drawing.Point(7, 68);
             this.btnHotel.Margin = new System.Windows.Forms.Padding(2);
             this.btnHotel.Name = "btnHotel";
-            this.btnHotel.Size = new System.Drawing.Size(194, 63);
+            this.btnHotel.Size = new System.Drawing.Size(194, 47);
             this.btnHotel.TabIndex = 0;
             this.btnHotel.Text = "HOTEL";
             this.btnHotel.UseVisualStyleBackColor = false;
@@ -107,7 +109,7 @@
             this.btnUser.Location = new System.Drawing.Point(7, 17);
             this.btnUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(194, 63);
+            this.btnUser.Size = new System.Drawing.Size(194, 47);
             this.btnUser.TabIndex = 0;
             this.btnUser.Text = "USER";
             this.btnUser.UseVisualStyleBackColor = false;
@@ -132,6 +134,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin user";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.BackColor = System.Drawing.Color.Red;
+            this.btnDangXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.Location = new System.Drawing.Point(8, 121);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(193, 46);
+            this.btnDangXuat.TabIndex = 1;
+            this.btnDangXuat.Text = "Đăng Xuất";
+            this.btnDangXuat.UseVisualStyleBackColor = false;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // txtAddress
             // 
@@ -210,17 +224,17 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "VIEW";
             // 
-            // btnDangXuat
+            // button1
             // 
-            this.btnDangXuat.BackColor = System.Drawing.Color.Red;
-            this.btnDangXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangXuat.Location = new System.Drawing.Point(8, 121);
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(193, 46);
-            this.btnDangXuat.TabIndex = 1;
-            this.btnDangXuat.Text = "Đăng Xuất";
-            this.btnDangXuat.UseVisualStyleBackColor = false;
-            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
+            this.button1.BackColor = System.Drawing.Color.LightGray;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(9, 224);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(193, 44);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Dịch Vụ";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormQuanTri
             // 
@@ -257,5 +271,6 @@
         private System.Windows.Forms.Button btnHotel;
         private System.Windows.Forms.Button btnUser;
         private System.Windows.Forms.Button btnDangXuat;
+        private System.Windows.Forms.Button button1;
     }
 }
