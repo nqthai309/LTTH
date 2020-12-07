@@ -57,6 +57,8 @@
                     </div>
                     <div class="options-area">
                         <form method="get" action="/Homestay/AddItemHomestay/@id">
+                            <br />
+                            <hr />
                             <p class="fs16 text-black"></p>
                             <div class="p-3">
                                 <p class="text-light-grey mb-3">Lựa chọn ngày</p>
@@ -75,29 +77,28 @@
                                         <div style="color:red; font-size:20px; margin-left:10px" id="divThongBao"></div>
                                     </div>
                                 </div>
-                                <p class="text-light-grey mb-3">Chọn các gói dịch vụ đính kèm tour</p>
+                                <br />
+                                <hr />
+                                <p class="text-light-grey mb-3">Chọn các gói dịch vụ đính kèm Homestay</p>
                                 @foreach (var it in Model.dichVu)
                                 {
-                                    <div class="form-inline">
-
-                                        <p class="fs14 text-left mr-3">@it.tenDichVu</p>
-
-                                        <input name="@it.idDichVu" type="radio" value="1" />Yes
-                                        <input name="@it.idDichVu" type="radio" value="0" checked="checked" />No
-                                        <div class="package-price-box col-sm-5">
-                                            <div class="package-price-detail">
-                                                <p class="package-price-total"><span class="j-totalPrice">@it.donGiaDichVu vnđ</span></p>
-                                                <div class="act_result__cost_detail act_result__cost_detail--inline j-cost_detail">
-                                                </div>
-                                            </div>
+                                    <div class="row ml-1">
+                                        <div class="col-sm-4">
+                                            <p class="fs16: text-left mr-3">@it.tenDichVu:</p>
                                         </div>
-
-
-
+                                        <div class="col-sm-4 form-inline">
+                                            <label class="mr-5 fs14"><input name="@it.idDichVu" type="radio" value="1" /><span class="ml-1"> Có</span></label>
+                                            <label class=" fs14"><input name="@it.idDichVu" type="radio" value="0" checked="checked" /><span class="ml-1"> Không</span></label>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <p class="fs16 ml-3 text-red">@it.donGiaDichVu vnđ</p>
+                                        </div>
                                     </div>
                                 }
+                                <br />
+                                <hr />
                                 <div class="package-payment-info">
-                                    <p class="text-light-grey mb-3">Đơn Giá : </p>
+                                    <p class="text-light-grey mb-3">Đơn Giá Phòng: </p>
                                     <div class="package-price-wrapper">
                                         <div class="package-price-content-wrapper">
                                             <div class="package-price-box col-sm-5">

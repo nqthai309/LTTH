@@ -46,5 +46,6 @@ namespace WebApplication3.Models
         public virtual ICollection<homestay_booking> homestay_booking { get; set; }
 
         public virtual location location { get; set; }
+
     }
 }

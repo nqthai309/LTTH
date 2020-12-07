@@ -24,5 +24,30 @@ namespace CNW_N8_MVC.Areas.Backend.Controllers
             model.homestay_bookings = JsonConvert.DeserializeObject<List<homestay_booking>>(client.GetListBooking_BE("homestay_bookings"));
             return View(model);
         }
+
+        public ActionResult ConfirmHotelBooking(int id)
+        {
+            client.ConfirmHotelBooking_BE(id);
+            return RedirectToAction("List", "BackendBooking", new { area = "Backend" });
+        }
+
+        public ActionResult DeleteHotelBooking(int id)
+        {
+            client.DeleteHotelBooking_BE(id);
+            return RedirectToAction("List", "BackendBooking", new { area = "Backend" });
+        }
+
+
+        public ActionResult ConfirmHomestayBooking(int id)
+        {
+            client.ConfirmHomestayBooking_BE(id);
+            return RedirectToAction("List", "BackendBooking", new { area = "Backend" });
+        }
+
+        public ActionResult DeleteHomestayBooking(int id)
+        {
+            client.DeleteHomestayBooking_BE(id);
+            return RedirectToAction("List", "BackendBooking", new { area = "Backend" });
+        }
     }
 }

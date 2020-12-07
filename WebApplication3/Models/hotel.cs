@@ -46,5 +46,6 @@ namespace WebApplication3.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<hotel_booking> hotel_booking { get; set; }
+
     }
 }

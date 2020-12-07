@@ -8,6 +8,17 @@ namespace WebApplication3.Models
 
     public partial class hotel_booking
     {
+        public hotel_booking(int id, string full_name, string email, string phone, string address, int? hotel_id, DateTime? from_date, DateTime? to_date, int? total_price, string selectDichVu, int? thanhTienDichVu, string v)
+        {
+            this.id = id;
+            this.hotel_id = hotel_id;
+            this.from_date = from_date;
+            this.to_date = to_date;
+            this.total_price = total_price;
+            this.selectDichVu = selectDichVu;
+            this.thanhTienDichVu = thanhTienDichVu;
+        }
+
         public int id { get; set; }
 
         public int? user_id { get; set; }
@@ -43,22 +54,6 @@ namespace WebApplication3.Models
         public string status_check { get; set; }
 
         public virtual hotel hotel { get; set; }
-
-        public hotel_booking(int? user_id, string customer_name, string customer_email, string customer_phone, string customer_address, int? hotel_id, DateTime? from_date, DateTime? to_date, int? total_price, string selectDichVu, int? thanhTienDichVu, string status_check)
-        {
-            this.user_id = user_id;
-            this.customer_name = customer_name;
-            this.customer_email = customer_email;
-            this.customer_phone = customer_phone;
-            this.customer_address = customer_address;
-            this.hotel_id = hotel_id;
-            this.from_date = from_date;
-            this.to_date = to_date;
-            this.total_price = total_price;
-            this.selectDichVu = selectDichVu;
-            this.thanhTienDichVu = thanhTienDichVu;
-            this.status_check = status_check;
-        }
 
         public hotel_booking()
         {

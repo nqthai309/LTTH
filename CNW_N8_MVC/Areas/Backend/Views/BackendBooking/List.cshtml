@@ -38,7 +38,16 @@
                                 <td>@it.thanhTienDichVu</td>
                                 <td>@it.total_price</td>
                                 <td>@it.status_check</td>
-                                <td><a href="#"  >X.Nhận</a></td>
+                                @if (it.status_check == "Đang Xử Lý")
+                                {
+                                    <td><a href="@Url.Action("ConfirmHotelBooking","BackendBooking",new { @id = it.id})"> X.Nhận </a></td>
+                                    <td><a class="text-warning" href="@Url.Action("DeleteHotelBooking","BackendBooking",new { @id = it.id})"> Hủy </a></td>
+                                }
+                                else
+                                {
+                                    <td><a class="text-warning" href="@Url.Action("DeleteHotelBooking","BackendBooking",new { @id = it.id})"> Hủy </a></td>
+                                }
+
                             </tr>
                             }
                         </tbody>
@@ -76,7 +85,15 @@
                                 <td>@it.thanhTienDichVu</td>
                                 <td>@it.total_price</td>
                                 <td>@it.status_check</td>
-                                <td><a href="#">X.Nhận</a></td>
+                                @if (it.status_check == "Đang Xử Lý")
+                                {
+                                    <td><a href="@Url.Action("ConfirmHomestayBooking","BackendBooking",new { @id = it.id})"> X.Nhận </a></td>
+                                    <td><a class="text-warning" href="@Url.Action("DeleteHomestayBooking","BackendBooking",new { @id = it.id})"> Hủy </a></td>
+                                }
+                                else
+                                {
+                                    <td><a class="text-warning" href="@Url.Action("DeleteHomestayBooking","BackendBooking",new { @id = it.id})"> Hủy </a></td>
+                                }
                             </tr>
                             }
                         </tbody>

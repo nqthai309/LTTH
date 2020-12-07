@@ -59,7 +59,6 @@ namespace CNW_N8_MVC.Areas.Backend.Controllers
                 }
             }
 
-
         }
 
 
@@ -172,5 +171,6 @@ namespace CNW_N8_MVC.Areas.Backend.Controllers
             return RedirectToAction("Index", "Home", new { area = "Backend" });
 
         }
+
     }
 }
