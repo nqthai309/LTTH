@@ -373,6 +373,28 @@ namespace WebApplication3
         }
 
         [WebMethod]
+        public string FrontEndGetListHomestayByLocation(string locationName)
+        {
+            var list = context.homestays.OrderByDescending(m => m.id).Where(h => h.location.location_name == locationName).ToList();
+            string json = JsonConvert.SerializeObject(list, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+
+        [WebMethod]
+        public string FrontEndGetListHotelByLocation(string locationName)
+        {
+            var list = context.hotels.OrderByDescending(m => m.id).Where(h => h.location.location_name == locationName).ToList();
+            string json = JsonConvert.SerializeObject(list, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+
+        [WebMethod]
         public string FrontEndLogin(string username, string password)
         {
             var result = context.users.Where(a => (a.username == username && a.password == password)).FirstOrDefault();
