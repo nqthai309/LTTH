@@ -24,5 +24,11 @@ namespace AppQuanLy.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DichVu_HT_HS> DichVu_HT_HS { get; set; }
+
+        public DichVu(string idDichVu, string tenDichVu)
+        {
+            this.idDichVu = idDichVu;
+            this.tenDichVu = tenDichVu;
+        }
     }
 }

@@ -747,6 +747,110 @@ namespace WebApplication3
             });
             return json;
         }
+
+        [WebMethod]
+        public string GetListDichVu_HTHS_BE()
+        {
+            var list = context.DichVu_HT_HS.Where(x => x.idHTHS != 0).ToList();
+            string json = JsonConvert.SerializeObject(list, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+        [WebMethod]
+        public string FrontEndGetListDV()
+        {
+            var list = context.DichVus.Where(x => x.idDichVu != null);
+            string json = JsonConvert.SerializeObject(list, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+        [WebMethod]
+        public string FrontEndGetListTenDV()
+        {
+            var list = context.DichVus.Where(x => x.tenDichVu != null);
+            string json = JsonConvert.SerializeObject(list, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+
+        [WebMethod]
+        public string FrontEndGetTheLoai()
+        {
+            var list = context.DichVu_HT_HS.Where(x => x.theLoai != null);
+            string json = JsonConvert.SerializeObject(list, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+        [WebMethod]
+        public void AddDichVu_BE(string json)
+        {
+            var dvhths = JsonConvert.DeserializeObject<DichVu_HT_HS>(json);
+            context.DichVu_HT_HS.Add(dvhths);
+            context.SaveChanges();
+        }
+
+        [WebMethod]
+        public void NewDV_BE(string json)
+        {
+            var dv = JsonConvert.DeserializeObject<DichVu>(json);
+            context.DichVus.Add(dv);
+            context.SaveChanges();
+        }
+        [WebMethod]
+        public string GetDichVu_HTHS_BE()
+        {
+            var list = context.DichVu_HT_HS.Where(x => x.idDichVu != null).ToList();
+            string json = JsonConvert.SerializeObject(list, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+
+        [WebMethod]
+        public void ThemMoiDichVu_BE(string json)
+        {
+            DichVu dv = JsonConvert.DeserializeObject<DichVu>(json);
+            context.DichVus.Add(dv);
+            context.SaveChanges();
+        }
+        [WebMethod]
+        public void ThemMoiDichVu2_BE(string id, string ten)
+        {
+            DichVu Dv = new DichVu(id, ten);
+            context.DichVus.Add(Dv);
+            //DichVu dv = JsonConvert.DeserializeObject<DichVu>(json);
+            //context.DichVus.Add(dv);
+            context.SaveChanges();
+        }
+        
+
+        [WebMethod]
+        public void DeleteDichVu_BE(int id)
+        {
+            //var listBooking = context.DichVus.Where(x => x.idDichVu.Length == id).ToList();
+            var listDichVu = context.DichVu_HT_HS.Where(x => x.idHTHS == id).ToList();
+            foreach (var item in listDichVu)
+            {
+                context.DichVu_HT_HS.Remove(item);
+            }
+            /*foreach (var item in listBooking)
+            {
+                context.DichVus.Remove(item);
+            }*/
+            context.SaveChanges();
+            //context.DichVus.Remove(context.DichVus.Find(id));
+            //context.SaveChanges();
+
+        }
         //------------------------HIEU----------------------------------
     }
 }

@@ -9,10 +9,24 @@ namespace WebApplication3.Models
     [Table("DichVu")]
     public partial class DichVu
     {
+        private string ma;
+        private string ten;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DichVu()
         {
             DichVu_HT_HS = new HashSet<DichVu_HT_HS>();
+        }
+
+        public DichVu(string ten)
+        {
+            this.ten = ten;
+        }
+
+        public DichVu(string ma, string ten)
+        {
+            this.ma = ma;
+            this.ten = ten;
         }
 
         [Key]

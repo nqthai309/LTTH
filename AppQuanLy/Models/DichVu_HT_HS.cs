@@ -29,5 +29,14 @@ namespace AppQuanLy.Models
         public int? donGiaDichVu { get; set; }
 
         public virtual DichVu DichVu { get; set; }
+
+        public DichVu_HT_HS(int idHTHS, string theLoai, string idDichVu, string tenDichVu, int? donGiaDichVu)
+        {
+            this.idHTHS = idHTHS;
+            this.theLoai = theLoai;
+            this.idDichVu = idDichVu;
+            this.tenDichVu = tenDichVu;
+            this.donGiaDichVu = donGiaDichVu;
+        }
     }
 }
