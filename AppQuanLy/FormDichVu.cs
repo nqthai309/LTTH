@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppQuanLy.Models;
-using ControlzEx.Standard;
+//using ControlzEx.Standard;
 using Newtonsoft.Json;
 
 namespace AppQuanLy
@@ -97,7 +97,7 @@ namespace AppQuanLy
         public void FormDichVu_Load_1(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'cNW_N8_TTHT1DataSet.DichVu_HT_HS' table. You can move, or remove it, as needed.
-            this.dichVu_HT_HSTableAdapter.Fill(this.cNW_N8_TTHT1DataSet.DichVu_HT_HS);
+            //this.dichVu_HT_HSTableAdapter.Fill(this.cNW_N8_TTHT1DataSet.DichVu_HT_HS);
 
             List<hotel> dsHotel = JsonConvert.DeserializeObject<List<hotel>>(client.GetListHotel_BE());
             List<homestay> dsHomestay = JsonConvert.DeserializeObject<List<homestay>>(client.GetListHomestay_BE());
@@ -134,6 +134,8 @@ namespace AppQuanLy
             }
             comboBoxTheLoai.DataSource = theLoai.Distinct().ToList();
 
+            List<DichVu_HT_HS> listDVHTHS = JsonConvert.DeserializeObject<List<DichVu_HT_HS>>(client.GetDichVu_HTHS_BE());
+            dgvDichVu.DataSource = listDVHTHS;
 
         }
 
@@ -151,7 +153,7 @@ namespace AppQuanLy
             }
             else
             {
-                client.DeleteDichVu_BE(id);
+                client.DeleteDichVu_BE(id, comboBoxTheLoai.Text, comboBoxDV.Text);
                 FormDichVu_Load_1(sender, e);
                 MessageBox.Show("Xoá thành công");
             }
@@ -160,7 +162,9 @@ namespace AppQuanLy
         private void comboBoxDV_SelectedIndexChanged(object sender, EventArgs e)
         {
             string maDV_select = comboBoxDV.Text.ToString();
-            string sql = @"Select * from DichVu_HT_HS where idDichVu = '"+maDV_select+"'";
+            DichVu dv = JsonConvert.DeserializeObject<DichVu>(client.GetDichVuByID(maDV_select));
+
+            txtTenDV.Text = dv.tenDichVu;
 
             //string tenDV = client.GetDichVu_HTHS_BE();
             //txtTenDV.Text = tenDV;

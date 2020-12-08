@@ -119,7 +119,7 @@ namespace AppQuanLy
             {
                 try
                 {
-                    client.ConfirmHotelBooking(idHotel);
+                    client.ConfirmHotelBooking_BE(idHotel);
                     idHotel = -1;
                     hotel_bookings = JsonConvert.DeserializeObject<List<hotel_booking>>(client.GetListBookingOptional_BE("hotel_bookings", cbHotel.Text));
                     dtHotelBooking.DataSource = hotel_bookings;
@@ -142,7 +142,8 @@ namespace AppQuanLy
             {
                 try
                 {
-                    client.ConfirmHomestayBooking(idHomestay);
+                    client.ConfirmHomestayBooking_BE(idHomestay);
+                    
                     idHomestay = -1;
                     homestay_bookings = JsonConvert.DeserializeObject<List<homestay_booking>>(client.GetListBookingOptional_BE("homestay_bookings", cbHomestay.Text));
                     dtHomestayBooking.DataSource = homestay_bookings;

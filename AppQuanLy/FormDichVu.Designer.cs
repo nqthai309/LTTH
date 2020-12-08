@@ -30,13 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvDichVu = new System.Windows.Forms.DataGridView();
-            this.idHTHSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.theLoaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDichVuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenDichVuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donGiaDichVuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dichVuHTHSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cNW_N8_TTHT1DataSet = new AppQuanLy.CNW_N8_TTHT1DataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -51,11 +45,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dichVu_HT_HSTableAdapter = new AppQuanLy.CNW_N8_TTHT1DataSetTableAdapters.DichVu_HT_HSTableAdapter();
+            this.dichVuHTHSBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dichVuHTHSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cNW_N8_TTHT1DataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dichVuHTHSBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDichVu
@@ -65,12 +64,12 @@
             this.dgvDichVu.AutoGenerateColumns = false;
             this.dgvDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDichVu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idHTHSDataGridViewTextBoxColumn,
-            this.theLoaiDataGridViewTextBoxColumn,
-            this.idDichVuDataGridViewTextBoxColumn,
-            this.tenDichVuDataGridViewTextBoxColumn,
-            this.donGiaDichVuDataGridViewTextBoxColumn});
-            this.dgvDichVu.DataSource = this.dichVuHTHSBindingSource;
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.dgvDichVu.DataSource = this.dichVuHTHSBindingSource1;
             this.dgvDichVu.Location = new System.Drawing.Point(12, 12);
             this.dgvDichVu.Name = "dgvDichVu";
             this.dgvDichVu.ReadOnly = true;
@@ -79,50 +78,9 @@
             this.dgvDichVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDichVu_CellClick);
             this.dgvDichVu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDichVu_CellContentClick);
             // 
-            // idHTHSDataGridViewTextBoxColumn
-            // 
-            this.idHTHSDataGridViewTextBoxColumn.DataPropertyName = "idHTHS";
-            this.idHTHSDataGridViewTextBoxColumn.HeaderText = "idHTHS";
-            this.idHTHSDataGridViewTextBoxColumn.Name = "idHTHSDataGridViewTextBoxColumn";
-            this.idHTHSDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // theLoaiDataGridViewTextBoxColumn
-            // 
-            this.theLoaiDataGridViewTextBoxColumn.DataPropertyName = "theLoai";
-            this.theLoaiDataGridViewTextBoxColumn.HeaderText = "theLoai";
-            this.theLoaiDataGridViewTextBoxColumn.Name = "theLoaiDataGridViewTextBoxColumn";
-            this.theLoaiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idDichVuDataGridViewTextBoxColumn
-            // 
-            this.idDichVuDataGridViewTextBoxColumn.DataPropertyName = "idDichVu";
-            this.idDichVuDataGridViewTextBoxColumn.HeaderText = "idDichVu";
-            this.idDichVuDataGridViewTextBoxColumn.Name = "idDichVuDataGridViewTextBoxColumn";
-            this.idDichVuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tenDichVuDataGridViewTextBoxColumn
-            // 
-            this.tenDichVuDataGridViewTextBoxColumn.DataPropertyName = "tenDichVu";
-            this.tenDichVuDataGridViewTextBoxColumn.HeaderText = "tenDichVu";
-            this.tenDichVuDataGridViewTextBoxColumn.Name = "tenDichVuDataGridViewTextBoxColumn";
-            this.tenDichVuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // donGiaDichVuDataGridViewTextBoxColumn
-            // 
-            this.donGiaDichVuDataGridViewTextBoxColumn.DataPropertyName = "donGiaDichVu";
-            this.donGiaDichVuDataGridViewTextBoxColumn.HeaderText = "donGiaDichVu";
-            this.donGiaDichVuDataGridViewTextBoxColumn.Name = "donGiaDichVuDataGridViewTextBoxColumn";
-            this.donGiaDichVuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // dichVuHTHSBindingSource
             // 
             this.dichVuHTHSBindingSource.DataMember = "DichVu_HT_HS";
-            this.dichVuHTHSBindingSource.DataSource = this.cNW_N8_TTHT1DataSet;
-            // 
-            // cNW_N8_TTHT1DataSet
-            // 
-            this.cNW_N8_TTHT1DataSet.DataSetName = "CNW_N8_TTHT1DataSet";
-            this.cNW_N8_TTHT1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
@@ -185,6 +143,7 @@
             this.txtTenDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDV.Location = new System.Drawing.Point(175, 106);
             this.txtTenDV.Name = "txtTenDV";
+            this.txtTenDV.ReadOnly = true;
             this.txtTenDV.Size = new System.Drawing.Size(159, 24);
             this.txtTenDV.TabIndex = 15;
             // 
@@ -277,9 +236,44 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Mã Hotel - Homestay :";
             // 
-            // dichVu_HT_HSTableAdapter
+            // dichVuHTHSBindingSource1
             // 
-            this.dichVu_HT_HSTableAdapter.ClearBeforeFill = true;
+            this.dichVuHTHSBindingSource1.DataSource = typeof(AppQuanLy.Models.DichVu_HT_HS);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "idHTHS";
+            this.dataGridViewTextBoxColumn1.HeaderText = "idHTHS";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "theLoai";
+            this.dataGridViewTextBoxColumn2.HeaderText = "theLoai";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "idDichVu";
+            this.dataGridViewTextBoxColumn3.HeaderText = "idDichVu";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "tenDichVu";
+            this.dataGridViewTextBoxColumn4.HeaderText = "tenDichVu";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "donGiaDichVu";
+            this.dataGridViewTextBoxColumn5.HeaderText = "donGiaDichVu";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // FormDichVu
             // 
@@ -294,9 +288,9 @@
             this.Load += new System.EventHandler(this.FormDichVu_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dichVuHTHSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cNW_N8_TTHT1DataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dichVuHTHSBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -318,13 +312,19 @@
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnThemMoi;
-        private CNW_N8_TTHT1DataSet cNW_N8_TTHT1DataSet;
+        //private CNW_N8_TTHT1DataSet cNW_N8_TTHT1DataSet;
         private System.Windows.Forms.BindingSource dichVuHTHSBindingSource;
-        private CNW_N8_TTHT1DataSetTableAdapters.DichVu_HT_HSTableAdapter dichVu_HT_HSTableAdapter;
+        //private CNW_N8_TTHT1DataSetTableAdapters.DichVu_HT_HSTableAdapter dichVu_HT_HSTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idHTHSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn theLoaiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDichVuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenDichVuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn donGiaDichVuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource dichVuHTHSBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     }
 }
