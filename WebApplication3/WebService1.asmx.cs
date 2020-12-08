@@ -856,14 +856,11 @@ namespace WebApplication3
         
 
         [WebMethod]
-        public void DeleteDichVu_BE(int id)
+        public void DeleteDichVu_BE(int id, string theLoai, string idDichVu)
         {
             //var listBooking = context.DichVus.Where(x => x.idDichVu.Length == id).ToList();
-            var listDichVu = context.DichVu_HT_HS.Where(x => x.idHTHS == id).ToList();
-            foreach (var item in listDichVu)
-            {
-                context.DichVu_HT_HS.Remove(item);
-            }
+            var listDichVu = context.DichVu_HT_HS.Where(x => x.idHTHS == id && x.theLoai == theLoai && x.idDichVu == idDichVu).SingleOrDefault();
+            context.DichVu_HT_HS.Remove(listDichVu);
             /*foreach (var item in listBooking)
             {
                 context.DichVus.Remove(item);
@@ -871,6 +868,17 @@ namespace WebApplication3
             context.SaveChanges();
             //context.DichVus.Remove(context.DichVus.Find(id));
             //context.SaveChanges();
+
+        }
+        [WebMethod]
+        public string GetDichVuByID(string id)
+        {
+            var dv = context.DichVus.Where(x => x.idDichVu == id).SingleOrDefault();
+            string json = JsonConvert.SerializeObject(dv, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
 
         }
         //------------------------HIEU----------------------------------

@@ -100,6 +100,12 @@
     <Compile Include="FormQuanTri.Designer.cs">
       <DependentUpon>FormQuanTri.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThemMoiDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemMoiDichVu.Designer.cs">
+      <DependentUpon>FormThemMoiDichVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.AddDichVu_BEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.AddHomestay_BEResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -157,6 +166,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.DangNhapAppWinFormResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.DeleteDichVu_BEResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.EditHomestay_BEResponse.datasource">
@@ -231,6 +243,15 @@
     <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndGetDetialHotelsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndGetDichVuHomestayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndGetDichVuHotelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndGetListDVResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndGetListHomestayResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -241,6 +262,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndGetListLocationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndGetListTenDVResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndGetTheLoaiResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndLoginResponse.datasource">
@@ -270,10 +297,19 @@
     <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.FrontEndUpdateUserInfoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.GetDichVuByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.GetDichVu_HTHS_BEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.GetListBookingOptional_BEResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.GetListBooking_BEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.GetListDichVu_HTHS_BEResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.GetListHomestay_BEResponse.datasource">
@@ -285,8 +321,18 @@
     <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.GetListUser_BEResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.NewDV_BEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.ThemMoiDichVu2_BEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\AppQuanLy.ServiceReference1.ThemMoiDichVu_BEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\WebService1.wsdl" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AppQuanLy.Models.DichVu_HT_HS.datasource" />
     <None Include="Properties\DataSources\AppQuanLy.Models.homestay.datasource" />
     <None Include="Properties\DataSources\AppQuanLy.Models.homestay_booking.datasource" />
     <None Include="Properties\DataSources\AppQuanLy.Models.hotel.datasource" />
