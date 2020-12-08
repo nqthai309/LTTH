@@ -312,20 +312,6 @@ namespace WebApplication3
             }
             return "";
         }
-        [WebMethod]
-        public void ConfirmHotelBooking(int id)
-        {
-            var result = context.hotel_booking.Where(x => x.id == id).SingleOrDefault();
-            result.status_check = "Xác Nhận";
-            context.SaveChanges();
-        }
-        [WebMethod]
-        public void ConfirmHomestayBooking(int id)
-        {
-            var result = context.homestay_booking.Where(x => x.id == id).SingleOrDefault();
-            result.status_check = "Xác Nhận";
-            context.SaveChanges();
-        }
 
         //------------------------THAI----------------------------------
         //------------------------TUNG----------------------------------
@@ -462,6 +448,38 @@ namespace WebApplication3
         {
             var homestayBooking = JsonConvert.DeserializeObject<homestay_booking>(json);
             context.homestay_booking.Add(homestayBooking);
+            context.SaveChanges();
+        }
+
+        [WebMethod]
+        public void DeleteHotelBooking_BE(int id)
+        {
+            var result = context.hotel_booking.Where(x => x.id == id).SingleOrDefault();
+            context.hotel_booking.Remove(result);
+            context.SaveChanges();
+        }
+
+        [WebMethod]
+        public void DeleteHomestayBooking_BE(int id)
+        {
+            var result = context.homestay_booking.Where(x => x.id == id).SingleOrDefault();
+            context.homestay_booking.Remove(result);
+            context.SaveChanges();
+        }
+
+        [WebMethod]
+        public void ConfirmHotelBooking_BE(int id)
+        {
+            var result = context.hotel_booking.Where(x => x.id == id).SingleOrDefault();
+            result.status_check = "Xác Nhận";
+            context.SaveChanges();
+        }
+
+        [WebMethod]
+        public void ConfirmHomestayBooking_BE(int id)
+        {
+            var result = context.homestay_booking.Where(x => x.id == id).SingleOrDefault();
+            result.status_check = "Xác Nhận";
             context.SaveChanges();
         }
         //------------------------TUNG----------------------------------
